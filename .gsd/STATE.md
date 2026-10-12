@@ -1,5 +1,5 @@
 ---
-updated: 2026-10-12T17:22:30+05:30
+updated: 2026-10-12T17:33:30+05:30
 ---
 
 # Project State: Gifts Galore
@@ -7,24 +7,25 @@ updated: 2026-10-12T17:22:30+05:30
 ## Current Position
 
 **Milestone:** v1.0 — Initial Marketplace Release
-**Phase:** Phase 0 — Foundation & Baseline Architecture Setup (Complete)
+**Phase:** Phase 1 — Core Database Schema, Authentication & Authorization (Complete)
 **Status:** ready_for_approval
-**Next Phase:** Phase 1 — Core Database Schema, Prisma Migrations, Authentication & Authorization
+**Next Phase:** Phase 2 — Multi-Vendor Catalog & Product Management
 
 ## Last Action
-- Successfully completed Phase 0 Foundation & Baseline Setup:
-  - Repository initialized with Git.
-  - Formulated and locked `.gsd/SPEC.md` (`Status: FINALIZED`).
-  - Created `.gsd/REQUIREMENTS.md`, `.gsd/ARCHITECTURE.md`, `.gsd/ROADMAP.md`, `.gsd/DECISIONS.md`.
-  - Configured `server/` with Express.js, Helmet, CORS, Cookie-Parser, rate limiting, and 3/3 passing Vitest integration tests.
-  - Validated `schema.prisma` with comprehensive multi-vendor, 3-tier gifting, direct gifting, and audit models.
-  - Generated Prisma Client.
-  - Configured `client/` with React 18, Vite, Bootstrap 5, custom Gifts Galore design tokens, and verified clean production build (2.43s).
-  - Ensured all `.env` files are ignored by git and only `.env.example` templates with placeholders exist in tracking.
+- Successfully executed Phase 1:
+  - Argon2id password hashing implemented with 64MB memory cost, 3 iterations, and 1 parallelism.
+  - HttpOnly SameSite cookie session management implemented with JWT signatures.
+  - CSRF protection middleware implemented with cryptographic token exchange and cookie validation.
+  - Rate limiting configured on auth endpoints (`max: 30 / 15m`).
+  - Role-based authorization (`CUSTOMER`, `SELLER`, `ADMIN`) and account moderation status checks (`ACTIVE`, `SUSPENDED`, `BLOCKED`) enforced.
+  - Multi-vendor seller ownership check middleware implemented.
+  - Public seller registration feature flag gating implemented (`ENABLE_PUBLIC_SELLER_REGISTRATION`).
+  - React frontend integrated with API client, `AuthContext`, and accessible login and registration pages.
+  - All 22 tests across 4 test suites passing in `server/`. Frontend production build passing in 1.96s.
 
 ## Next Steps
-1. Request user review and explicit approval for Phase 0 completion.
-2. Advance to Phase 1: Core Database Schema, Prisma Migrations, Authentication & Authorization Engine (Argon2id password hashing, HttpOnly session handling, CSRF token validation, RBAC middleware, account moderation).
+1. Request explicit approval from user to advance from Phase 1 to Phase 2.
+2. Advance to Phase 2: Multi-Vendor Catalog & Product Management (Product CRUD, categories, variants, inventory alerts, Supabase Storage photo upload pipeline, seller-specific catalog queries).
 
 ## Active Decisions
 | Decision | Choice | Made | Affects |
@@ -38,4 +39,4 @@ updated: 2026-10-12T17:22:30+05:30
 None.
 
 ## Concerns
-- Supabase credentials: user can provide active Supabase connection string when ready to apply live cloud migrations, while local development uses standard environment variables.
+- Supabase storage bucket access keys will be needed for cloud photo uploads in Phase 2; local fallback with mock storage handler will ensure offline testing remains 100% deterministic.

@@ -2,6 +2,9 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import { AuthProvider } from './context/AuthContext';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
 
 function HomePage() {
   return (
@@ -103,18 +106,22 @@ function HomePage() {
 
 export default function App() {
   return (
-    <div className="d-flex flex-column min-vh-100">
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="*" element={
-          <div className="container py-5 text-center flex-grow-1">
-            <h2>Page Not Found</h2>
-            <p className="text-muted">The requested section is currently being constructed.</p>
-          </div>
-        } />
-      </Routes>
-      <Footer />
-    </div>
+    <AuthProvider>
+      <div className="d-flex flex-column min-vh-100">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="*" element={
+            <div className="container py-5 text-center flex-grow-1">
+              <h2>Page Not Found</h2>
+              <p className="text-muted">The requested section is currently being constructed.</p>
+            </div>
+          } />
+        </Routes>
+        <Footer />
+      </div>
+    </AuthProvider>
   );
 }

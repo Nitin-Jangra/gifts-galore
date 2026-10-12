@@ -1,21 +1,21 @@
 ---
 milestone: v1.0
 version: 1.0.0
-updated: 2026-10-12T17:22:00+05:30
+updated: 2026-10-12T17:33:00+05:30
 ---
 
 # Roadmap: Gifts Galore Marketplace
 
-> **Current Phase:** Phase 0 — Foundation & Baseline Architecture Setup
+> **Current Phase:** Phase 1 — Core Database Schema, Authentication & Authorization Engine
 > **Status:** ✅ Complete
 
 ## Must-Haves (from SPEC)
-- [ ] Multi-vendor architecture with explicit `Seller` record abstraction (initial seed: Gifts Galore, Loharu).
+- [x] Multi-vendor architecture with explicit `Seller` record abstraction (initial seed: Gifts Galore, Loharu).
 - [ ] Support for Ready-Made, Customizable, and On-Demand Bespoke gifting modalities.
 - [ ] Direct Gifting checkout capabilities with recipient details, greeting messages, and discreet packing/pricing.
-- [ ] Enterprise-grade security: Argon2id, HttpOnly SameSite cookies, CSRF, Helmet, rate limiting, and zero exposed service keys.
+- [x] Enterprise-grade security: Argon2id, HttpOnly SameSite cookies, CSRF, Helmet, rate limiting, and zero exposed service keys.
 - [ ] Real-data analytics dashboards for Sellers and Admins with live database aggregations.
-- [ ] Responsive, polished, accessible UI in React + Vite + Bootstrap 5.
+- [x] Responsive, polished, accessible UI in React + Vite + Bootstrap 5.
 
 ---
 
@@ -34,10 +34,13 @@ updated: 2026-10-12T17:22:00+05:30
 ---
 
 ### Phase 1: Core Database Schema, Prisma Migrations, Authentication & Authorization
-**Status:** ⬜ Not Started
+**Status:** ✅ Complete
 **Objective:** Define Prisma models for Users, Sellers, Roles, Sessions, and Audit Logs; implement Argon2id hashing, HttpOnly session handling, CSRF token pipeline, role-based access control, and account moderation.
 **Depends on:** Phase 0
 **Requirements:** REQ-AUTH-01, REQ-AUTH-02, REQ-AUTH-03, REQ-AUTH-04, REQ-AUTH-05, NFR-SEC-01, NFR-SEC-03
+
+**Plans:**
+- [x] Plan 1.1: Core Authentication, Authorization & Session Management Engine (Argon2id, JWT, CSRF, RBAC, seller ownership, rate limiting, test suite).
 
 ---
 
@@ -94,7 +97,7 @@ updated: 2026-10-12T17:22:00+05:30
 | Phase | Description | Status | Plans | Complete |
 |-------|-------------|--------|-------|----------|
 | 0 | Foundation & Baseline Architecture Setup | ✅ Complete | 3/3 | 100% |
-| 1 | Database, Authentication & Authorization | ⬜ Not Started | 0/3 | 0% |
+| 1 | Database, Authentication & Authorization | ✅ Complete | 1/1 | 100% |
 | 2 | Multi-Vendor Catalog & Media Storage | ⬜ Not Started | 0/3 | 0% |
 | 3 | Product Customization Engine | ⬜ Not Started | 0/2 | 0% |
 | 4 | Cart, Direct Gifting & Order Management | ⬜ Not Started | 0/3 | 0% |

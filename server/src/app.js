@@ -3,6 +3,7 @@ import helmet from 'helmet';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import rateLimit from 'express-rate-limit';
+import authRoutes from './routes/auth.routes.js';
 
 const app = express();
 
@@ -47,6 +48,9 @@ app.get('/api/v1/health', (req, res) => {
     timestamp: new Date().toISOString(),
   });
 });
+
+// Authentication & Session Routes
+app.use('/api/v1/auth', authRoutes);
 
 // 404 handler
 app.use((req, res) => {
