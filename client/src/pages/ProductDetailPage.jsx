@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { api } from '../services/api';
+import { useCart } from '../context/CartContext';
 import CustomizationForm from '../components/CustomizationForm';
 
 export default function ProductDetailPage() {
   const { slug } = useParams();
+  const navigate = useNavigate();
+  const { addToCart } = useCart();
   const [product, setProduct] = useState(null);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -176,7 +179,13 @@ export default function ProductDetailPage() {
                       </li>
                     ))}
                   </ul>
-                  <button className="btn btn-terracotta btn-lg w-100">
+                  <button
+                    className="btn btn-terracotta btn-lg w-100"
+                    onClick={() => {
+                      addToCart(p, 1, customizationSnapshot);
+                      navigate('/cart');
+                    }}
+                  >
                     <i className="bi bi-bag-plus me-2"></i> Add Personalized Gift to Cart
                   </button>
                   <button
@@ -198,7 +207,14 @@ export default function ProductDetailPage() {
               <i className="bi bi-stars me-2"></i> Submit Bespoke Request
             </Link>
           ) : (
-            <button className="btn btn-terracotta btn-lg w-100" disabled={p.stockQuantity === 0}>
+            <button
+              className="btn btn-terracotta btn-lg w-100"
+              disabled={p.stockQuantity === 0}
+              onClick={() => {
+                addToCart(p, 1, null);
+                navigate('/cart');
+              }}
+            >
               <i className="bi bi-bag-plus me-2"></i> Add to Cart
             </button>
           )}

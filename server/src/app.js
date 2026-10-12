@@ -6,6 +6,7 @@ import rateLimit from 'express-rate-limit';
 import authRoutes from './routes/auth.routes.js';
 import productRoutes from './routes/product.routes.js';
 import customizationRoutes from './routes/customization.routes.js';
+import orderRoutes from './routes/order.routes.js';
 
 const app = express();
 
@@ -59,6 +60,9 @@ app.use('/api/v1/products', productRoutes);
 
 // Customization & Personalization Routes
 app.use('/api/v1', customizationRoutes);
+
+// Order & Direct Gifting Routes
+app.use('/api/v1/orders', orderRoutes);
 
 // 404 handler
 app.use((req, res) => {

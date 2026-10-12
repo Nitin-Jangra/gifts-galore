@@ -1,5 +1,5 @@
 ---
-updated: 2026-10-12T17:44:30+05:30
+updated: 2026-10-12T17:51:00+05:30
 ---
 
 # Project State: Gifts Galore
@@ -7,23 +7,22 @@ updated: 2026-10-12T17:44:30+05:30
 ## Current Position
 
 **Milestone:** v1.0 — Initial Marketplace Release
-**Phase:** Phase 3 — Product Customization Engine & Media Validation (Complete)
+**Phase:** Phase 4 — Cart, Direct Gifting, Checkout & Order Lifecycle (Complete)
 **Status:** ready_for_approval
-**Next Phase:** Phase 4 — Cart, Direct Gifting, Checkout & Order Lifecycle
+**Next Phase:** Phase 5 — On-Demand Bespoke Gift Request Workflow
 
 ## Last Action
-- Successfully executed Phase 3:
-  - Built `CustomizationField` repository and service supporting product-specific customization rules (text fields, max length, instructions, select options, and file requirements).
-  - Enforced eligibility constraint: custom fields can only be attached to `CUSTOMIZABLE` products.
-  - Enforced multi-vendor ownership: sellers can only configure their own store's customization fields.
-  - Implemented server-side customer personalization validation generating immutable snapshots.
-  - Built frontend `CustomizationForm` with real-time character counting, field input rules, and transparent craftsmanship notices (no fake live previews).
-  - Integrated into `ProductDetailPage` with confirmed personalization indicator and cart CTA.
-  - All 40 tests passing across 6 test suites. Frontend production build passing in 1.66s.
+- Successfully executed Phase 4:
+  - Built `Order` and `OrderItem` repository, service, and routes under `/api/v1/orders`.
+  - Enforced Direct Gifting validation rules (`recipientName`, `recipientPhone`, `recipientAddress`, `giftMessage`, `deliveryDateRequested`, `discreetPricingRequested`).
+  - Implemented multi-vendor line item partitioning with true `sellerId` ownership and immutable customization snapshots.
+  - Implemented real-time inventory validation and decrement logic.
+  - Built frontend `CartContext`, `CartPage`, `CheckoutPage` with Direct Gifting switch, and `OrderConfirmationPage`.
+  - All 47 tests passing across 7 test suites. Frontend production build passing in 1.55s.
 
 ## Next Steps
-1. Request explicit approval to advance to Phase 4.
-2. Advance to Phase 4: Cart, Direct Gifting, Checkout & Order Lifecycle (CartContext, direct gifting recipient address/custom message/delivery date/discreet packaging, multi-seller item partitioning, and order state machine).
+1. Request explicit approval to advance to Phase 5.
+2. Advance to Phase 5: On-Demand Bespoke Gift Request Workflow (Customer submission of occasion/budget/reference images, seller review & quotation, customer quote approval, and order conversion).
 
 ## Active Decisions
 | Decision | Choice | Made | Affects |

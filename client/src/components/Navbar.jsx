@@ -1,9 +1,10 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { useCart } from '../context/CartContext';
 
 export default function Navbar() {
   const { user, logout } = useAuth();
+  const { itemsCount } = useCart();
 
   return (
     <nav className="navbar navbar-expand-lg navbar-gg sticky-top py-3">
@@ -42,9 +43,11 @@ export default function Navbar() {
           <div className="d-flex align-items-center gap-3">
             <Link to="/cart" className="btn btn-outline-secondary position-relative rounded-pill px-3 py-1">
               <i className="bi bi-bag me-1"></i> Cart
-              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                0
-              </span>
+              {itemsCount > 0 && (
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  {itemsCount}
+                </span>
+              )}
             </Link>
 
             {user ? (

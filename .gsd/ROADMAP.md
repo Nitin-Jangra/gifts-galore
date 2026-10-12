@@ -1,18 +1,18 @@
 ---
 milestone: v1.0
 version: 1.0.0
-updated: 2026-10-12T17:44:00+05:30
+updated: 2026-10-12T17:50:00+05:30
 ---
 
 # Roadmap: Gifts Galore Marketplace
 
-> **Current Phase:** Phase 3 — Product Customization Engine & Media Validation
+> **Current Phase:** Phase 4 — Cart, Direct Gifting, Checkout & Order Lifecycle
 > **Status:** ✅ Complete
 
 ## Must-Haves (from SPEC)
 - [x] Multi-vendor architecture with explicit `Seller` record abstraction (initial seed: Gifts Galore, Loharu).
 - [x] Support for Ready-Made, Customizable, and On-Demand Bespoke gifting modalities.
-- [ ] Direct Gifting checkout capabilities with recipient details, greeting messages, and discreet packing/pricing.
+- [x] Direct Gifting checkout capabilities with recipient details, greeting messages, and discreet packing/pricing.
 - [x] Enterprise-grade security: Argon2id, HttpOnly SameSite cookies, CSRF, Helmet, rate limiting, and zero exposed service keys.
 - [ ] Real-data analytics dashboards for Sellers and Admins with live database aggregations.
 - [x] Responsive, polished, accessible UI in React + Vite + Bootstrap 5.
@@ -67,10 +67,13 @@ updated: 2026-10-12T17:44:00+05:30
 ---
 
 ### Phase 4: Cart, Direct Gifting, Checkout & Order Lifecycle
-**Status:** ⬜ Not Started
+**Status:** ✅ Complete
 **Objective:** Build persistent cart, direct gifting checkout flow (recipient address, custom card message, requested delivery date, discreet packaging), order fulfillment state machine, and multi-vendor order partitioning.
 **Depends on:** Phase 3
 **Requirements:** REQ-CART-01, REQ-GIFT-01, REQ-GIFT-02, REQ-ORD-01, REQ-ORD-02
+
+**Plans:**
+- [x] Plan 4.1: Cart, Direct Gifting, Checkout & Multi-Vendor Order Lifecycle (Validation, stock reduction, direct gifting, tenant-isolated order queries, Cart & Checkout UI).
 
 ---
 
@@ -106,7 +109,7 @@ updated: 2026-10-12T17:44:00+05:30
 | 1 | Database, Authentication & Authorization | ✅ Complete | 1/1 | 100% |
 | 2 | Multi-Vendor Catalog & Media Storage | ✅ Complete | 1/1 | 100% |
 | 3 | Product Customization Engine | ✅ Complete | 1/1 | 100% |
-| 4 | Cart, Direct Gifting & Order Management | ⬜ Not Started | 0/3 | 0% |
+| 4 | Cart, Direct Gifting & Order Management | ✅ Complete | 1/1 | 100% |
 | 5 | On-Demand Bespoke Gift Workflow | ⬜ Not Started | 0/2 | 0% |
 | 6 | Seller & Admin Dashboards & Analytics | ⬜ Not Started | 0/2 | 0% |
 | 7 | Customer Portal, Hardening & Verification | ⬜ Not Started | 0/3 | 0% |
