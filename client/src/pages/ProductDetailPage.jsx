@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { api } from '../services/api';
+import CustomizationForm from '../components/CustomizationForm';
 
 export default function ProductDetailPage() {
   const { slug } = useParams();
@@ -8,6 +9,7 @@ export default function ProductDetailPage() {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [customizationSnapshot, setCustomizationSnapshot] = useState(null);
 
   // Fallback if exploring without backend db connection
   const defaultProduct = {
@@ -158,22 +160,48 @@ export default function ProductDetailPage() {
             </p>
           </div>
 
-          {/* Action Button */}
-          <div className="d-flex gap-3">
-            {p.productType === 'CUSTOMIZABLE' ? (
-              <button className="btn btn-terracotta btn-lg flex-grow-1">
-                <i className="bi bi-brush me-2"></i> Configure Customization
-              </button>
-            ) : p.productType === 'ON_DEMAND' ? (
-              <Link to="/bespoke-request" className="btn btn-terracotta btn-lg flex-grow-1 text-center">
-                <i className="bi bi-stars me-2"></i> Submit Bespoke Request
-              </Link>
-            ) : (
-              <button className="btn btn-terracotta btn-lg flex-grow-1" disabled={p.stockQuantity === 0}>
-                <i className="bi bi-bag-plus me-2"></i> Add to Cart
-              </button>
-            )}
-          </div>
+          {/* Action Button & Customization Section */}
+          {p.productType === 'CUSTOMIZABLE' ? (
+            <div>
+              {customizationSnapshot ? (
+                <div className="alert alert-success border p-3 mb-3 rounded-3">
+                  <div className="d-flex align-items-center gap-2 mb-2 text-success fw-bold">
+                    <i className="bi bi-patch-check-fill fs-5"></i>
+                    <span>Personalization Confirmed & Ready</span>
+                  </div>
+                  <ul className="small text-secondary mb-3 ps-3">
+                    {customizationSnapshot.fields?.map((f) => (
+                      <li key={f.fieldId}>
+                        <strong>{f.label}:</strong> {f.value}
+                      </li>
+                    ))}
+                  </ul>
+                  <button className="btn btn-terracotta btn-lg w-100">
+                    <i className="bi bi-bag-plus me-2"></i> Add Personalized Gift to Cart
+                  </button>
+                  <button
+                    className="btn btn-link btn-sm text-secondary w-100 mt-2 text-decoration-none"
+                    onClick={() => setCustomizationSnapshot(null)}
+                  >
+                    Edit Personalization
+                  </button>
+                </div>
+              ) : (
+                <CustomizationForm
+                  productId={p.id}
+                  onCustomizationComplete={(snapshot) => setCustomizationSnapshot(snapshot)}
+                />
+              )}
+            </div>
+          ) : p.productType === 'ON_DEMAND' ? (
+            <Link to="/bespoke-request" className="btn btn-terracotta btn-lg w-100 text-center">
+              <i className="bi bi-stars me-2"></i> Submit Bespoke Request
+            </Link>
+          ) : (
+            <button className="btn btn-terracotta btn-lg w-100" disabled={p.stockQuantity === 0}>
+              <i className="bi bi-bag-plus me-2"></i> Add to Cart
+            </button>
+          )}
         </div>
       </div>
     </div>
