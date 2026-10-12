@@ -1,0 +1,117 @@
+/* Gifts Galore — Design Tokens & Theme Stylesheet */
+:root {
+  /* Brand Color Palette */
+  --gg-cream: #FAF7F2;
+  --gg-cream-surface: #FFFFFF;
+  --gg-cream-card: #FDFBF8;
+  --gg-terracotta: #C05621;
+  --gg-terracotta-hover: #9C4215;
+  --gg-terracotta-subtle: #FEEBC8;
+  --gg-coral: #DD6B20;
+  --gg-neutral-dark: #2D3748;
+  --gg-neutral-muted: #718096;
+  --gg-neutral-border: #E2E8F0;
+  --gg-accent-gold: #D69E2E;
+
+  /* Typography */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Elevation */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--gg-cream);
+  color: var(--gg-neutral-dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .brand-font {
+  font-family: var(--font-heading);
+}
+
+/* Custom Component Utilities */
+.btn-terracotta {
+  background-color: var(--gg-terracotta);
+  color: #ffffff;
+  border: 1px solid var(--gg-terracotta);
+  font-weight: 600;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-terracotta:hover, .btn-terracotta:focus {
+  background-color: var(--gg-terracotta-hover);
+  color: #ffffff;
+  border-color: var(--gg-terracotta-hover);
+  transform: translateY(-1px);
+}
+
+.btn-outline-terracotta {
+  color: var(--gg-terracotta);
+  border: 1px solid var(--gg-terracotta);
+  background-color: transparent;
+  font-weight: 600;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-outline-terracotta:hover {
+  background-color: var(--gg-terracotta);
+  color: #ffffff;
+}
+
+.badge-gift-type {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35em 0.65em;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-ready-made {
+  background-color: #E2E8F0;
+  color: #2D3748;
+}
+
+.badge-customizable {
+  background-color: #FEFCBF;
+  color: #744210;
+}
+
+.badge-on-demand {
+  background-color: #FEEBC8;
+  color: #7B341E;
+}
+
+.card-luxury {
+  background-color: var(--gg-cream-surface);
+  border: 1px solid var(--gg-neutral-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-luxury:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.navbar-gg {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--gg-neutral-border);
+}
+
+.footer-gg {
+  background-color: #22272F;
+  color: #E2E8F0;
+  border-top: 1px solid #2D3748;
+}

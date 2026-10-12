@@ -1,0 +1,286 @@
+// Prisma Schema for Gifts Galore Multi-Vendor Gift Marketplace
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum Role {
+  CUSTOMER
+  SELLER
+  ADMIN
+}
+
+enum AccountStatus {
+  PENDING
+  ACTIVE
+  SUSPENDED
+  BLOCKED
+}
+
+enum ProductType {
+  READY_MADE
+  CUSTOMIZABLE
+  ON_DEMAND
+}
+
+enum ProductStatus {
+  DRAFT
+  PENDING_REVIEW
+  ACTIVE
+  INACTIVE
+  DELETED
+}
+
+enum Availability {
+  IN_STOCK
+  OUT_OF_STOCK
+  MADE_TO_ORDER
+}
+
+enum OrderStatus {
+  PENDING_PAYMENT
+  CONFIRMED
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  REFUNDED
+}
+
+enum CustomFieldType {
+  TEXT
+  TEXTAREA
+  IMAGE_UPLOAD
+  SELECT
+  COLOR
+}
+
+enum BespokeStatus {
+  SUBMITTED
+  UNDER_REVIEW
+  QUOTED
+  CUSTOMER_APPROVED
+  ORDER_CREATED
+  REJECTED
+  CANCELLED
+  EXPIRED
+}
+
+// User model: base identity for Customers, Sellers, and Admins
+model User {
+  id              String         @id @default(uuid())
+  email           String         @unique
+  passwordHash    String
+  fullName        String
+  phone           String?
+  role            Role           @default(CUSTOMER)
+  status          AccountStatus  @default(ACTIVE)
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+
+  sellerProfile   Seller?
+  orders          Order[]
+  bespokeRequests BespokeRequest[]
+  auditLogs       AuditLog[]
+
+  @@index([email])
+  @@index([role, status])
+}
+
+// Seller model: multi-vendor tenant representation
+model Seller {
+  id              String         @id @default(uuid())
+  userId          String         @unique
+  user            User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  storeName       String         @unique
+  slug            String         @unique
+  description     String?
+  city            String         @default("Loharu")
+  state           String         @default("Haryana")
+  country         String         @default("India")
+  contactPhone    String?
+  contactEmail    String?
+  status          AccountStatus  @default(ACTIVE)
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+
+  products        Product[]
+  orderItems      OrderItem[]
+  bespokeRequests BespokeRequest[]
+
+  @@index([slug])
+  @@index([status])
+}
+
+// Category model
+model Category {
+  id          String    @id @default(uuid())
+  name        String    @unique
+  slug        String    @unique
+  description String?
+  imageUrl    String?
+  isActive    Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  products    Product[]
+}
+
+// Product model
+model Product {
+  id              String         @id @default(uuid())
+  sellerId        String
+  seller          Seller         @relation(fields: [sellerId], references: [id], onDelete: Restrict)
+  categoryId      String?
+  category        Category?      @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  name            String
+  slug            String         @unique
+  description     String
+  productType     ProductType    @default(READY_MADE)
+  status          ProductStatus  @default(DRAFT)
+  availability    Availability   @default(IN_STOCK)
+  price           Decimal        @db.Decimal(10, 2)
+  discountPrice   Decimal?       @db.Decimal(10, 2)
+  stockQuantity   Int            @default(0)
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+
+  images          ProductImage[]
+  customFields    CustomizationField[]
+  orderItems      OrderItem[]
+
+  @@index([sellerId])
+  @@index([categoryId])
+  @@index([status, availability])
+}
+
+// ProductImage model
+model ProductImage {
+  id           String   @id @default(uuid())
+  productId    String
+  product      Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  imageUrl     String
+  isPrimary    Boolean  @default(false)
+  displayOrder Int      @default(0)
+  createdAt    DateTime @default(now())
+
+  @@index([productId])
+}
+
+// CustomizationField: seller-defined options for customizable gifts
+model CustomizationField {
+  id               String          @id @default(uuid())
+  productId        String
+  product          Product         @relation(fields: [productId], references: [id], onDelete: Cascade)
+  label            String
+  instructions     String?
+  fieldType        CustomFieldType @default(TEXT)
+  isRequired       Boolean         @default(false)
+  maxLength        Int?
+  maxFileSizeMb    Int?            @default(5)
+  allowedFileTypes String?         // e.g., "image/jpeg,image/png,image/webp"
+  optionsJson      Json?           // For SELECT options
+  displayOrder     Int             @default(0)
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+
+  @@index([productId])
+}
+
+// Order model with Direct Gifting Support
+model Order {
+  id                       String      @id @default(uuid())
+  orderNumber              String      @unique
+  customerId               String
+  customer                 User        @relation(fields: [customerId], references: [id], onDelete: Restrict)
+  status                   OrderStatus @default(PENDING_PAYMENT)
+  
+  // Financial breakdown
+  grossAmount              Decimal     @db.Decimal(10, 2)
+  discountAmount           Decimal     @default(0.00) @db.Decimal(10, 2)
+  taxAmount                Decimal     @default(0.00) @db.Decimal(10, 2)
+  shippingAmount           Decimal     @default(0.00) @db.Decimal(10, 2)
+  netAmount                Decimal     @db.Decimal(10, 2)
+
+  // Direct Gifting Fields
+  isGift                   Boolean     @default(false)
+  recipientName            String?
+  recipientPhone           String?
+  recipientAddress         String?
+  giftMessage              String?
+  deliveryDateRequested    DateTime?
+  discreetPricingRequested Boolean     @default(false)
+
+  createdAt                DateTime    @default(now())
+  updatedAt                DateTime    @updatedAt
+
+  items                    OrderItem[]
+
+  @@index([customerId])
+  @@index([status])
+}
+
+// OrderItem model preserving immutable customization snapshot
+model OrderItem {
+  id                    String   @id @default(uuid())
+  orderId               String
+  order                 Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId             String
+  product               Product  @relation(fields: [productId], references: [id], onDelete: Restrict)
+  sellerId              String
+  seller                Seller   @relation(fields: [sellerId], references: [id], onDelete: Restrict)
+  quantity              Int      @default(1)
+  unitPrice             Decimal  @db.Decimal(10, 2)
+  customizationSnapshot Json?    // Immutable snapshot of customer entries & uploaded images
+  createdAt             DateTime @default(now())
+
+  @@index([orderId])
+  @@index([sellerId])
+}
+
+// On-Demand Bespoke Gift Requests
+model BespokeRequest {
+  id               String        @id @default(uuid())
+  customerId       String
+  customer         User          @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  sellerId         String
+  seller           Seller        @relation(fields: [sellerId], references: [id], onDelete: Restrict)
+  occasion         String
+  recipientNotes   String?
+  budgetRange      String?
+  targetDate       DateTime?
+  description      String
+  referenceImages  String[]
+  status           BespokeStatus @default(SUBMITTED)
+  quotedPrice      Decimal?      @db.Decimal(10, 2)
+  sellerNotes      String?
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  @@index([customerId])
+  @@index([sellerId])
+  @@index([status])
+}
+
+// AuditLog model for tracking sensitive admin/seller activities
+model AuditLog {
+  id         String   @id @default(uuid())
+  userId     String?
+  user       User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  action     String
+  entityType String
+  entityId   String?
+  details    Json?
+  ipAddress  String?
+  createdAt  DateTime @default(now())
+
+  @@index([userId])
+  @@index([action])
+  @@index([entityType])
+}
