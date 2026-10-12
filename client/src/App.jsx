@@ -5,6 +5,9 @@ import Footer from './components/Footer';
 import { AuthProvider } from './context/AuthContext';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
+import StorefrontPage from './pages/StorefrontPage';
+import ProductDetailPage from './pages/ProductDetailPage';
+import SellerProductsPage from './pages/SellerProductsPage';
 
 function HomePage() {
   return (
@@ -110,7 +113,11 @@ export default function App() {
       <div className="d-flex flex-column min-vh-100">
         <Navbar />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<StorefrontPage />} />
+          <Route path="/customizable" element={<StorefrontPage defaultType="CUSTOMIZABLE" />} />
+          <Route path="/products/:slug" element={<ProductDetailPage />} />
+          <Route path="/seller/products" element={<SellerProductsPage />} />
+          <Route path="/seller/dashboard" element={<SellerProductsPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="*" element={

@@ -1,16 +1,21 @@
 # Project Journal: Gifts Galore
 
+## 2026-10-12: Phase 2 Completion — Multi-Vendor Catalog & Product Management
+- **Action**: Implemented product catalog repository, service, and routes (`/api/v1/products`) supporting 3 gifting types (`READY_MADE`, `CUSTOMIZABLE`, `ON_DEMAND`).
+- **Action**: Enforced zero-stock inventory rule (`stockQuantity === 0` cannot be `IN_STOCK` unless `MADE_TO_ORDER`).
+- **Action**: Enforced strict seller ownership on all catalog mutations and image additions.
+- **Action**: Created media upload pipeline in `server/src/utils/storage.js` and `server/src/middleware/upload.middleware.js` with allowlisted MIME verification and 5MB size limits.
+- **Action**: Created catalog test suite in `server/tests/catalog.test.js` (11 tests). All 33 test suite tests passing.
+- **Action**: Created frontend `StorefrontPage`, `ProductDetailPage`, and `SellerProductsPage`. Verified production build in 2.43s.
+- **Next**: Await approval to proceed to Phase 3 (Product Customization Engine).
+
+---
+
 ## 2026-10-12: Phase 1 Completion — Authentication, Authorization & Session Management
-- **Action**: Implemented Argon2id password hashing, JWT session signing, and CSRF token double-submit/signature validation in `server/src/utils/security.js` and `server/src/middleware/csrf.middleware.js`.
-- **Action**: Built user repository, auth service, controller, and routes under `/api/v1/auth` (`/register`, `/register-seller`, `/login`, `/logout`, `/me`, `/csrf-token`).
-- **Action**: Enforced RBAC (`requireRole`), tenant ownership verification (`requireSellerOwnership`), and account moderation checks (`SUSPENDED`/`BLOCKED`).
-- **Action**: Created unit and integration test suites:
-  - `tests/security.test.js` (Argon2id, JWT, CSRF)
-  - `tests/auth.test.js` (Full API auth flow, rate limiting, validation)
-  - `tests/rbac.test.js` (Role permissions and seller ownership guards)
-  - Result: 22 tests passing across 4 test suites.
-- **Action**: Implemented frontend API client with automatic CSRF management, `AuthContext`, `LoginPage`, `RegisterPage`, and dynamic `Navbar`. Verified Vite production build in 1.96s.
-- **Next**: Await approval to start Phase 2 (Catalog & Media Uploads).
+- **Action**: Implemented Argon2id password hashing, JWT session signing, and CSRF token double-submit/signature validation.
+- **Action**: Built user repository, auth service, controller, and routes under `/api/v1/auth`.
+- **Action**: Enforced RBAC, tenant ownership verification, and account moderation checks.
+- **Action**: Created unit and integration test suites: 22 tests passing across 4 test suites.
 
 ---
 

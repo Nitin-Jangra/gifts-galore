@@ -1,5 +1,5 @@
 ---
-updated: 2026-10-12T17:33:30+05:30
+updated: 2026-10-12T17:39:00+05:30
 ---
 
 # Project State: Gifts Galore
@@ -7,25 +7,24 @@ updated: 2026-10-12T17:33:30+05:30
 ## Current Position
 
 **Milestone:** v1.0 — Initial Marketplace Release
-**Phase:** Phase 1 — Core Database Schema, Authentication & Authorization (Complete)
+**Phase:** Phase 2 — Multi-Vendor Catalog & Product Management (Complete)
 **Status:** ready_for_approval
-**Next Phase:** Phase 2 — Multi-Vendor Catalog & Product Management
+**Next Phase:** Phase 3 — Product Customization Engine & Media Validation
 
 ## Last Action
-- Successfully executed Phase 1:
-  - Argon2id password hashing implemented with 64MB memory cost, 3 iterations, and 1 parallelism.
-  - HttpOnly SameSite cookie session management implemented with JWT signatures.
-  - CSRF protection middleware implemented with cryptographic token exchange and cookie validation.
-  - Rate limiting configured on auth endpoints (`max: 30 / 15m`).
-  - Role-based authorization (`CUSTOMER`, `SELLER`, `ADMIN`) and account moderation status checks (`ACTIVE`, `SUSPENDED`, `BLOCKED`) enforced.
-  - Multi-vendor seller ownership check middleware implemented.
-  - Public seller registration feature flag gating implemented (`ENABLE_PUBLIC_SELLER_REGISTRATION`).
-  - React frontend integrated with API client, `AuthContext`, and accessible login and registration pages.
-  - All 22 tests across 4 test suites passing in `server/`. Frontend production build passing in 1.96s.
+- Successfully executed Phase 2:
+  - Multi-vendor product catalog model and repositories built supporting 3 gifting types: `READY_MADE`, `CUSTOMIZABLE`, and `ON_DEMAND`.
+  - Zero-inventory validation constraint enforced: products with 0 stock cannot be marked `IN_STOCK` unless configured as `MADE_TO_ORDER`.
+  - Multi-vendor ownership checks enforced across product updates, deactivations, and media uploads.
+  - Image upload pipeline implemented with Multer memory storage, strict MIME allowlisting (`image/jpeg`, `image/png`, `image/webp`), and 5MB size limits.
+  - Frontend storefront catalog with gifting modality tabs, search, and dynamic responsive product cards.
+  - Product detail page built with gallery, pricing/tax indicator, and direct gifting notice.
+  - Seller product management portal built.
+  - All 33 tests passing across 5 test suites. Frontend production build passing in 2.43s.
 
 ## Next Steps
-1. Request explicit approval from user to advance from Phase 1 to Phase 2.
-2. Advance to Phase 2: Multi-Vendor Catalog & Product Management (Product CRUD, categories, variants, inventory alerts, Supabase Storage photo upload pipeline, seller-specific catalog queries).
+1. Request explicit approval to advance to Phase 3.
+2. Advance to Phase 3: Product Customization Engine & Media Validation (Seller customizable field definitions, customer personalization input validation, and immutable order customization snapshots).
 
 ## Active Decisions
 | Decision | Choice | Made | Affects |
@@ -39,4 +38,4 @@ updated: 2026-10-12T17:33:30+05:30
 None.
 
 ## Concerns
-- Supabase storage bucket access keys will be needed for cloud photo uploads in Phase 2; local fallback with mock storage handler will ensure offline testing remains 100% deterministic.
+None.

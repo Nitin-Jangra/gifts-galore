@@ -4,6 +4,7 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import rateLimit from 'express-rate-limit';
 import authRoutes from './routes/auth.routes.js';
+import productRoutes from './routes/product.routes.js';
 
 const app = express();
 
@@ -51,6 +52,9 @@ app.get('/api/v1/health', (req, res) => {
 
 // Authentication & Session Routes
 app.use('/api/v1/auth', authRoutes);
+
+// Catalog & Product Routes
+app.use('/api/v1/products', productRoutes);
 
 // 404 handler
 app.use((req, res) => {

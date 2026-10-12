@@ -1,17 +1,17 @@
 ---
 milestone: v1.0
 version: 1.0.0
-updated: 2026-10-12T17:33:00+05:30
+updated: 2026-10-12T17:38:00+05:30
 ---
 
 # Roadmap: Gifts Galore Marketplace
 
-> **Current Phase:** Phase 1 — Core Database Schema, Authentication & Authorization Engine
+> **Current Phase:** Phase 2 — Multi-Vendor Catalog & Product Management
 > **Status:** ✅ Complete
 
 ## Must-Haves (from SPEC)
 - [x] Multi-vendor architecture with explicit `Seller` record abstraction (initial seed: Gifts Galore, Loharu).
-- [ ] Support for Ready-Made, Customizable, and On-Demand Bespoke gifting modalities.
+- [x] Support for Ready-Made, Customizable, and On-Demand Bespoke gifting modalities.
 - [ ] Direct Gifting checkout capabilities with recipient details, greeting messages, and discreet packing/pricing.
 - [x] Enterprise-grade security: Argon2id, HttpOnly SameSite cookies, CSRF, Helmet, rate limiting, and zero exposed service keys.
 - [ ] Real-data analytics dashboards for Sellers and Admins with live database aggregations.
@@ -45,10 +45,13 @@ updated: 2026-10-12T17:33:00+05:30
 ---
 
 ### Phase 2: Multi-Vendor Catalog & Product Management
-**Status:** ⬜ Not Started
+**Status:** ✅ Complete
 **Objective:** Implement product management API and UI: categories, product variants, inventory thresholds, multi-image upload pipeline to Supabase Storage, and strict seller-ownership authorization.
 **Depends on:** Phase 1
 **Requirements:** REQ-CAT-01, REQ-CAT-02, REQ-CAT-03, REQ-CAT-04, REQ-CAT-05, NFR-SEC-05, NFR-PERF-01
+
+**Plans:**
+- [x] Plan 2.1: Multi-Vendor Catalog, Media Storage & Product Management (Catalog CRUD, 0-stock validation rule, ownership checks, image uploads, Storefront & Product Details views).
 
 ---
 
@@ -98,7 +101,7 @@ updated: 2026-10-12T17:33:00+05:30
 |-------|-------------|--------|-------|----------|
 | 0 | Foundation & Baseline Architecture Setup | ✅ Complete | 3/3 | 100% |
 | 1 | Database, Authentication & Authorization | ✅ Complete | 1/1 | 100% |
-| 2 | Multi-Vendor Catalog & Media Storage | ⬜ Not Started | 0/3 | 0% |
+| 2 | Multi-Vendor Catalog & Media Storage | ✅ Complete | 1/1 | 100% |
 | 3 | Product Customization Engine | ⬜ Not Started | 0/2 | 0% |
 | 4 | Cart, Direct Gifting & Order Management | ⬜ Not Started | 0/3 | 0% |
 | 5 | On-Demand Bespoke Gift Workflow | ⬜ Not Started | 0/2 | 0% |
