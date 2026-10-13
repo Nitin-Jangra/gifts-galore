@@ -7,6 +7,8 @@ import authRoutes from './routes/auth.routes.js';
 import productRoutes from './routes/product.routes.js';
 import customizationRoutes from './routes/customization.routes.js';
 import orderRoutes from './routes/order.routes.js';
+import bespokeRoutes from './routes/bespoke.routes.js';
+import analyticsRoutes from './routes/analytics.routes.js';
 
 const app = express();
 
@@ -63,6 +65,12 @@ app.use('/api/v1', customizationRoutes);
 
 // Order & Direct Gifting Routes
 app.use('/api/v1/orders', orderRoutes);
+
+// Bespoke On-Demand Gift Request Routes
+app.use('/api/v1/bespoke', bespokeRoutes);
+
+// Analytics & Dashboard Routes
+app.use('/api/v1/analytics', analyticsRoutes);
 
 // 404 handler
 app.use((req, res) => {

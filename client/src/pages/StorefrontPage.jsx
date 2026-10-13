@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { api } from '../services/api';
+import { useWishlist } from '../context/WishlistContext';
 
 export default function StorefrontPage({ defaultType = null }) {
+  const { toggleWishlist, isInWishlist } = useWishlist();
   const [products, setProducts] = useState([]);
   const [selectedType, setSelectedType] = useState(defaultType || 'ALL');
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(true);
+
 
   // Mock initial seed products if backend DB empty during development
   const fallbackProducts = [
@@ -219,6 +222,19 @@ export default function StorefrontPage({ defaultType = null }) {
                     <span className={`position-absolute top-0 start-0 m-3 badge badge-gift-type ${getBadgeClass(product.productType)} shadow-sm`}>
                       {getBadgeLabel(product.productType)}
                     </span>
+                    <button
+                      type="button"
+                      className="btn btn-sm position-absolute top-0 end-0 m-2 rounded-circle bg-white shadow-sm p-0 d-flex align-items-center justify-content-center"
+                      style={{ width: '32px', height: '32px', border: 'none' }}
+                      title={isInWishlist(product.id) ? 'Remove from Wishlist' : 'Save to Wishlist'}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        toggleWishlist(product);
+                      }}
+                    >
+                      <i className={`bi ${isInWishlist(product.id) ? 'bi-heart-fill text-danger' : 'bi-heart text-secondary'}`}></i>
+                    </button>
                     {product.availability === 'MADE_TO_ORDER' && (
                       <span className="position-absolute bottom-0 end-0 m-2 badge bg-dark opacity-75 small">
                         Made to Order

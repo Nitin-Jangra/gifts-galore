@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { api } from '../services/api';
 import { useCart } from '../context/CartContext';
+import { useWishlist } from '../context/WishlistContext';
 import CustomizationForm from '../components/CustomizationForm';
 
 export default function ProductDetailPage() {
   const { slug } = useParams();
   const navigate = useNavigate();
   const { addToCart } = useCart();
+  const { toggleWishlist, isInWishlist } = useWishlist();
   const [product, setProduct] = useState(null);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -179,15 +181,24 @@ export default function ProductDetailPage() {
                       </li>
                     ))}
                   </ul>
-                  <button
-                    className="btn btn-terracotta btn-lg w-100"
-                    onClick={() => {
-                      addToCart(p, 1, customizationSnapshot);
-                      navigate('/cart');
-                    }}
-                  >
-                    <i className="bi bi-bag-plus me-2"></i> Add Personalized Gift to Cart
-                  </button>
+                  <div className="d-flex gap-2">
+                    <button
+                      className="btn btn-terracotta btn-lg flex-grow-1"
+                      onClick={() => {
+                        addToCart(p, 1, customizationSnapshot);
+                        navigate('/cart');
+                      }}
+                    >
+                      <i className="bi bi-bag-plus me-2"></i> Add Personalized Gift to Cart
+                    </button>
+                    <button
+                      className={`btn btn-lg ${isInWishlist(p.id) ? 'btn-danger' : 'btn-outline-danger'}`}
+                      onClick={() => toggleWishlist({ ...p, primaryImageUrl: currentImage })}
+                      title={isInWishlist(p.id) ? 'Saved in Wishlist' : 'Save to Wishlist'}
+                    >
+                      <i className={`bi ${isInWishlist(p.id) ? 'bi-heart-fill' : 'bi-heart'}`}></i>
+                    </button>
+                  </div>
                   <button
                     className="btn btn-link btn-sm text-secondary w-100 mt-2 text-decoration-none"
                     onClick={() => setCustomizationSnapshot(null)}
@@ -196,27 +207,54 @@ export default function ProductDetailPage() {
                   </button>
                 </div>
               ) : (
-                <CustomizationForm
-                  productId={p.id}
-                  onCustomizationComplete={(snapshot) => setCustomizationSnapshot(snapshot)}
-                />
+                <div>
+                  <CustomizationForm
+                    productId={p.id}
+                    onCustomizationComplete={(snapshot) => setCustomizationSnapshot(snapshot)}
+                  />
+                  <button
+                    className={`btn btn-sm w-100 mt-2 ${isInWishlist(p.id) ? 'btn-outline-danger active' : 'btn-outline-secondary'}`}
+                    onClick={() => toggleWishlist({ ...p, primaryImageUrl: currentImage })}
+                  >
+                    <i className={`bi ${isInWishlist(p.id) ? 'bi-heart-fill text-danger' : 'bi-heart'} me-1`}></i>
+                    {isInWishlist(p.id) ? 'Saved in Your Wishlist' : 'Save to Wishlist for Later'}
+                  </button>
+                </div>
               )}
             </div>
           ) : p.productType === 'ON_DEMAND' ? (
-            <Link to="/bespoke-request" className="btn btn-terracotta btn-lg w-100 text-center">
-              <i className="bi bi-stars me-2"></i> Submit Bespoke Request
-            </Link>
+            <div className="d-flex flex-column gap-2">
+              <Link to="/bespoke-request" className="btn btn-terracotta btn-lg w-100 text-center">
+                <i className="bi bi-stars me-2"></i> Submit Bespoke Request
+              </Link>
+              <button
+                className={`btn btn-sm ${isInWishlist(p.id) ? 'btn-outline-danger active' : 'btn-outline-secondary'}`}
+                onClick={() => toggleWishlist({ ...p, primaryImageUrl: currentImage })}
+              >
+                <i className={`bi ${isInWishlist(p.id) ? 'bi-heart-fill text-danger' : 'bi-heart'} me-1`}></i>
+                {isInWishlist(p.id) ? 'Saved in Your Wishlist' : 'Save Concept to Wishlist'}
+              </button>
+            </div>
           ) : (
-            <button
-              className="btn btn-terracotta btn-lg w-100"
-              disabled={p.stockQuantity === 0}
-              onClick={() => {
-                addToCart(p, 1, null);
-                navigate('/cart');
-              }}
-            >
-              <i className="bi bi-bag-plus me-2"></i> Add to Cart
-            </button>
+            <div className="d-flex gap-2">
+              <button
+                className="btn btn-terracotta btn-lg flex-grow-1"
+                disabled={p.stockQuantity === 0}
+                onClick={() => {
+                  addToCart(p, 1, null);
+                  navigate('/cart');
+                }}
+              >
+                <i className="bi bi-bag-plus me-2"></i> Add to Cart
+              </button>
+              <button
+                className={`btn btn-lg ${isInWishlist(p.id) ? 'btn-danger' : 'btn-outline-danger'}`}
+                onClick={() => toggleWishlist({ ...p, primaryImageUrl: currentImage })}
+                title={isInWishlist(p.id) ? 'Saved in Wishlist' : 'Save to Wishlist'}
+              >
+                <i className={`bi ${isInWishlist(p.id) ? 'bi-heart-fill' : 'bi-heart'}`}></i>
+              </button>
+            </div>
           )}
         </div>
       </div>

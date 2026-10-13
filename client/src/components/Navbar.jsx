@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
+import { useWishlist } from '../context/WishlistContext';
 
 export default function Navbar() {
   const { user, logout } = useAuth();
   const { itemsCount } = useCart();
+  const { wishlist } = useWishlist();
 
   return (
     <nav className="navbar navbar-expand-lg navbar-gg sticky-top py-3">
@@ -41,6 +43,15 @@ export default function Navbar() {
           </ul>
 
           <div className="d-flex align-items-center gap-3">
+            <Link to="/account" className="btn btn-outline-secondary position-relative rounded-pill px-3 py-1" title="Saved Gifts">
+              <i className="bi bi-heart me-1"></i> Wishlist
+              {wishlist.length > 0 && (
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  {wishlist.length}
+                </span>
+              )}
+            </Link>
+
             <Link to="/cart" className="btn btn-outline-secondary position-relative rounded-pill px-3 py-1">
               <i className="bi bi-bag me-1"></i> Cart
               {itemsCount > 0 && (

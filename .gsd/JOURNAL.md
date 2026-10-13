@@ -1,5 +1,28 @@
 # Project Journal: Gifts Galore
 
+## 2026-10-13: Phases 5, 6 & 7 Completion — Bespoke Workflow, Dashboards & Customer Experience
+- **Action (Phase 5 - Bespoke Workflow Engine)**:
+  - Implemented bespoke validation schema, repository, service state machine, controller, and routes under `/api/v1/bespoke`.
+  - Enforced valid lifecycle transitions (`SUBMITTED` -> `UNDER_REVIEW` -> `QUOTED` -> `CUSTOMER_APPROVED` -> `ORDER_CREATED`).
+  - Created `BespokeRequestPage.jsx` with craftsmanship disclosure, budget inputs, and requested date picker.
+  - Implemented automated tests in `server/tests/bespoke.test.js` (5 passing tests).
+- **Action (Phase 6 - Dashboards & Real Analytics)**:
+  - Built live aggregation analytics repository in `server/src/repositories/analytics.repository.js`.
+  - Implemented strict separation of gross order value, discounts, taxes, and shipping collected from platform net revenue.
+  - Implemented `SellerDashboardPage.jsx` with store KPIs, low-stock inventory alerts, pending fulfillment queues, and bestselling gifts.
+  - Implemented `AdminDashboardPage.jsx` with platform financial breakdowns, catalog composition, and user moderation distributions.
+  - Added test suite in `server/tests/analytics.test.js` (4 passing tests).
+- **Action (Phase 7 - Customer Portal & Hardening)**:
+  - Built `WishlistContext.jsx` with browser storage persistence.
+  - Integrated interactive heart buttons across `StorefrontPage.jsx` and `ProductDetailPage.jsx`.
+  - Built comprehensive `CustomerAccountPage.jsx` with tabs for Placed Orders (with Direct Gifting details & tracking), Bespoke Commissions (with quote acceptance), Saved Wishlist (with quick Add-to-Cart), and Security credentials overview.
+  - Added Wishlist badge to `Navbar.jsx` and connected all routes in `App.jsx`.
+  - Verified full test suite: 56 tests passing across 9 test files in `server/`.
+  - Verified client production build: clean Vite build in 1.81s.
+- **Milestone v1.0 Result**: All phases (0 through 7) are now 100% complete and empirically verified.
+
+---
+
 ## 2026-10-12: Phase 4 Completion — Cart, Direct Gifting, Checkout & Multi-Vendor Order Lifecycle
 - **Action**: Implemented order repository, service, and routes under `/api/v1/orders`.
 - **Action**: Enforced Direct Gifting validation rules (`recipientName`, `recipientPhone`, `recipientAddress`, `giftMessage`, `deliveryDateRequested`, `discreetPricingRequested`).

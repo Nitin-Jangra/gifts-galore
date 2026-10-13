@@ -1,21 +1,21 @@
 ---
 milestone: v1.0
 version: 1.0.0
-updated: 2026-10-12T17:50:00+05:30
+updated: 2026-10-13T09:50:00+05:30
 ---
 
 # Roadmap: Gifts Galore Marketplace
 
-> **Current Phase:** Phase 4 — Cart, Direct Gifting, Checkout & Order Lifecycle
-> **Status:** ✅ Complete
+> **Current Milestone:** v1.0 Production Readiness
+> **Status:** ✅ All Phases Complete (0 through 7)
 
 ## Must-Haves (from SPEC)
 - [x] Multi-vendor architecture with explicit `Seller` record abstraction (initial seed: Gifts Galore, Loharu).
 - [x] Support for Ready-Made, Customizable, and On-Demand Bespoke gifting modalities.
 - [x] Direct Gifting checkout capabilities with recipient details, greeting messages, and discreet packing/pricing.
 - [x] Enterprise-grade security: Argon2id, HttpOnly SameSite cookies, CSRF, Helmet, rate limiting, and zero exposed service keys.
-- [ ] Real-data analytics dashboards for Sellers and Admins with live database aggregations.
-- [x] Responsive, polished, accessible UI in React + Vite + Bootstrap 5.
+- [x] Real-data analytics dashboards for Sellers and Admins with live database aggregations.
+- [x] Responsive, polished, accessible UI in React + Vite + Bootstrap 5 with Wishlist and Customer Portal.
 
 ---
 
@@ -78,26 +78,36 @@ updated: 2026-10-12T17:50:00+05:30
 ---
 
 ### Phase 5: On-Demand Bespoke Gift Request Workflow
-**Status:** ⬜ Not Started
+**Status:** ✅ Complete
 **Objective:** Build end-to-end bespoke gift request workflow (`SUBMITTED` → `UNDER_REVIEW` → `QUOTED` → `CUSTOMER_APPROVED` → `ORDER_CREATED`), allowing customer image/spec submission and seller quotation.
 **Depends on:** Phase 4
 **Requirements:** REQ-BESPOKE-01, REQ-BESPOKE-02
 
+**Plans:**
+- [x] Plan 5.1: Bespoke Workflow Engine (Data models, state machine transitions, quotation & approval APIs, BespokeRequestPage UI, 5 unit & integration tests).
+
 ---
 
 ### Phase 6: Seller & Admin Dashboards & Real Analytics
-**Status:** ⬜ Not Started
+**Status:** ✅ Complete
 **Objective:** Provide real database-derived analytics: gross order values, discounts, net sales, inventory alerts, customization backlogs, admin moderation queues, and audit log viewer.
 **Depends on:** Phase 5
 **Requirements:** REQ-DASH-01, REQ-DASH-02, REQ-AUDIT-01
 
+**Plans:**
+- [x] Plan 6.1: Seller & Admin Real-Data Dashboards (Aggregations, strict separation of gross from net platform revenue, low-stock alerts, SellerDashboardPage & AdminDashboardPage UI, test suite).
+
 ---
 
 ### Phase 7: Customer Experience, Wishlist & End-to-End Hardening
-**Status:** ⬜ Not Started
-**Objective:** Implement customer account portal (saved addresses, order history, wishlist), complete UI/UX polish across all viewports, conduct full security review, automated test verification, and deployment documentation.
+**Status:** ✅ Complete
+**Objective:** Implement customer account portal (orders, bespoke commissions, saved wishlist), complete UI/UX polish across all viewports, conduct full security review, automated test verification, and deployment documentation.
 **Depends on:** Phase 6
 **Requirements:** REQ-UI-01, REQ-UI-02, NFR-A11Y-01
+
+**Plans:**
+- [x] Plan 7.1: Customer Portal & Saved Gifts Wishlist (WishlistContext, interactive heart buttons, CustomerAccountPage with tabbed order tracking and quote acceptance).
+- [x] Plan 7.2: Full-Stack Verification & Build Hardening (56 passing Vitest tests, clean Vite production build).
 
 ---
 
@@ -110,6 +120,6 @@ updated: 2026-10-12T17:50:00+05:30
 | 2 | Multi-Vendor Catalog & Media Storage | ✅ Complete | 1/1 | 100% |
 | 3 | Product Customization Engine | ✅ Complete | 1/1 | 100% |
 | 4 | Cart, Direct Gifting & Order Management | ✅ Complete | 1/1 | 100% |
-| 5 | On-Demand Bespoke Gift Workflow | ⬜ Not Started | 0/2 | 0% |
-| 6 | Seller & Admin Dashboards & Analytics | ⬜ Not Started | 0/2 | 0% |
-| 7 | Customer Portal, Hardening & Verification | ⬜ Not Started | 0/3 | 0% |
+| 5 | On-Demand Bespoke Gift Workflow | ✅ Complete | 1/1 | 100% |
+| 6 | Seller & Admin Dashboards & Analytics | ✅ Complete | 1/1 | 100% |
+| 7 | Customer Portal, Hardening & Verification | ✅ Complete | 2/2 | 100% |
