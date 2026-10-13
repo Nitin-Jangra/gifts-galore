@@ -1,117 +1,221 @@
-/* Gifts Galore — Design Tokens & Theme Stylesheet */
-:root {
-  /* Brand Color Palette */
-  --gg-cream: #FAF7F2;
-  --gg-cream-surface: #FFFFFF;
-  --gg-cream-card: #FDFBF8;
-  --gg-terracotta: #C05621;
-  --gg-terracotta-hover: #9C4215;
-  --gg-terracotta-subtle: #FEEBC8;
-  --gg-coral: #DD6B20;
-  --gg-neutral-dark: #2D3748;
-  --gg-neutral-muted: #718096;
-  --gg-neutral-border: #E2E8F0;
-  --gg-accent-gold: #D69E2E;
+/* ==========================================================================
+   GIFTS GALORE — DESIGN SYSTEM TOKENS (Extracted from Google Stitch Project)
+   ========================================================================== */
 
-  /* Typography */
-  --font-heading: 'Playfair Display', serif;
+:root {
+  /* Stitch Color Palette */
+  --gg-primary: #d96b43;
+  --gg-primary-hover: #bf5730;
+  --gg-primary-fixed: #ffdbcf;
+  --gg-on-primary: #ffffff;
+  --gg-on-primary-fixed: #360e00;
+
+  --gg-secondary: #6b8f71;
+  --gg-secondary-hover: #58795e;
+  --gg-secondary-container: #d5e8d4;
+  --gg-on-secondary-container: #244a2b;
+
+  --gg-background: #fbf9f5;
+  --gg-surface: #fff8f6;
+  --gg-surface-container: #f5f2ec;
+  --gg-surface-container-low: #fbf6f0;
+  --gg-surface-container-high: #efe8e1;
+  --gg-surface-container-lowest: #ffffff;
+
+  --gg-on-surface: #2b2625;
+  --gg-on-surface-variant: #53433e;
+  --gg-outline: #85736d;
+  --gg-outline-variant: #d8c2bb;
+
+  /* Backward Compatibility Variables */
+  --gg-terracotta: var(--gg-primary);
+  --gg-terracotta-hover: var(--gg-primary-hover);
+  --gg-terracotta-subtle: var(--gg-primary-fixed);
+  --gg-cream: var(--gg-background);
+  --gg-cream-surface: var(--gg-surface-container-lowest);
+  --gg-neutral-dark: var(--gg-on-surface);
+  --gg-neutral-muted: var(--gg-on-surface-variant);
+  --gg-neutral-border: var(--gg-outline-variant);
+
+  /* Typography: Newsreader (Editorial Serif) & Plus Jakarta Sans (Modern Clean) */
+  --font-heading: 'Newsreader', Georgia, serif;
   --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* Elevation */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+  --shadow-xs: 0 1px 2px rgba(43, 38, 37, 0.04);
+  --shadow-sm: 0 2px 8px rgba(43, 38, 37, 0.05);
+  --shadow-md: 0 6px 16px rgba(43, 38, 37, 0.08);
+  --shadow-lg: 0 12px 28px rgba(43, 38, 37, 0.12);
 }
 
 body {
   margin: 0;
   font-family: var(--font-body);
-  background-color: var(--gg-cream);
-  color: var(--gg-neutral-dark);
+  background-color: var(--gg-background);
+  color: var(--gg-on-surface);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* Headings */
 h1, h2, h3, h4, .brand-font {
   font-family: var(--font-heading);
+  letter-spacing: -0.015em;
 }
 
-/* Custom Component Utilities */
+/* Buttons */
 .btn-terracotta {
-  background-color: var(--gg-terracotta);
-  color: #ffffff;
-  border: 1px solid var(--gg-terracotta);
+  background-color: var(--gg-primary);
+  color: var(--gg-on-primary);
+  border: 1px solid var(--gg-primary);
   font-weight: 600;
-  padding: 0.6rem 1.4rem;
-  border-radius: 8px;
-  transition: all 0.2s ease-in-out;
+  padding: 0.65rem 1.4rem;
+  border-radius: 9999px; /* Pill style from Stitch */
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(217, 107, 67, 0.25);
 }
 
 .btn-terracotta:hover, .btn-terracotta:focus {
-  background-color: var(--gg-terracotta-hover);
-  color: #ffffff;
-  border-color: var(--gg-terracotta-hover);
+  background-color: var(--gg-primary-hover);
+  color: var(--gg-on-primary);
+  border-color: var(--gg-primary-hover);
   transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(217, 107, 67, 0.35);
 }
 
 .btn-outline-terracotta {
-  color: var(--gg-terracotta);
-  border: 1px solid var(--gg-terracotta);
+  color: var(--gg-primary);
+  border: 1.5px solid var(--gg-primary);
   background-color: transparent;
   font-weight: 600;
-  padding: 0.6rem 1.4rem;
-  border-radius: 8px;
-  transition: all 0.2s ease-in-out;
+  padding: 0.65rem 1.4rem;
+  border-radius: 9999px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-outline-terracotta:hover {
-  background-color: var(--gg-terracotta);
+  background-color: var(--gg-primary);
+  color: var(--gg-on-primary);
+  border-color: var(--gg-primary);
+}
+
+.btn-sage {
+  background-color: var(--gg-secondary);
+  color: #ffffff;
+  border: 1px solid var(--gg-secondary);
+  font-weight: 600;
+  padding: 0.65rem 1.4rem;
+  border-radius: 9999px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-sage:hover {
+  background-color: var(--gg-secondary-hover);
   color: #ffffff;
 }
 
-.badge-gift-type {
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 0.35em 0.65em;
-  border-radius: 20px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.badge-ready-made {
-  background-color: #E2E8F0;
-  color: #2D3748;
-}
-
-.badge-customizable {
-  background-color: #FEFCBF;
-  color: #744210;
-}
-
-.badge-on-demand {
-  background-color: #FEEBC8;
-  color: #7B341E;
-}
-
+/* Luxury Cards */
 .card-luxury {
-  background-color: var(--gg-cream-surface);
-  border: 1px solid var(--gg-neutral-border);
-  border-radius: 12px;
+  background-color: var(--gg-surface-container-lowest);
+  border: 1px solid rgba(216, 194, 187, 0.5);
+  border-radius: 16px;
   box-shadow: var(--shadow-sm);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card-luxury:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-md);
+  border-color: var(--gg-outline-variant);
 }
 
+/* Modality Badges from Stitch */
+.badge-gift-type {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.4em 0.8em;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badge-ready-made {
+  background-color: #EAE6DF;
+  color: #3F3935;
+}
+
+.badge-customizable {
+  background-color: #FCE8DE;
+  color: #8C391B;
+  border: 1px solid #F5C7B3;
+}
+
+.badge-on-demand {
+  background-color: #E2ECE3;
+  color: #2D5834;
+  border: 1px solid #C4DCC6;
+}
+
+/* Stitch Filter Chip Pill */
+.filter-chip-pill {
+  padding: 0.5rem 1.1rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  border: 1.5px solid transparent;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.filter-chip-pill.active {
+  background-color: var(--gg-primary);
+  color: var(--gg-on-primary);
+  box-shadow: 0 2px 8px rgba(217, 107, 67, 0.25);
+}
+
+.filter-chip-pill:not(.active) {
+  background-color: var(--gg-surface-container);
+  color: var(--gg-on-surface);
+  border-color: var(--gg-outline-variant);
+}
+
+.filter-chip-pill:not(.active):hover {
+  background-color: var(--gg-surface-container-high);
+  color: var(--gg-on-surface);
+}
+
+/* Stitch Occasion Showcase Card */
+.occasion-card {
+  border-radius: 14px;
+  background-color: var(--gg-surface-container-low);
+  border: 1px solid var(--gg-outline-variant);
+  padding: 1rem;
+  text-align: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--gg-on-surface);
+  display: block;
+}
+
+.occasion-card:hover {
+  background-color: var(--gg-surface-container);
+  border-color: var(--gg-primary);
+  transform: translateY(-2px);
+  color: var(--gg-primary);
+}
+
+/* Navigation bar */
 .navbar-gg {
-  background-color: #FFFFFF;
-  border-bottom: 1px solid var(--gg-neutral-border);
+  background-color: rgba(255, 248, 246, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(216, 194, 187, 0.6);
 }
 
+/* Footer */
 .footer-gg {
-  background-color: #22272F;
-  color: #E2E8F0;
-  border-top: 1px solid #2D3748;
+  background-color: #241E1C;
+  color: #EAE3DE;
+  border-top: 1px solid #3A3230;
 }

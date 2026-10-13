@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary-fixed": "#ffdbcf", "background": "#fff8f6", "on-secondary-container": "#4a6c50", "on-primary": "#ffffff", "on-tertiary-container": "#fffbff", "primary-fixed-dim": "#ffb59c", "surface": "#fff8f6", "error-container": "#ffdad6", "on-tertiary-fixed": "#1e1b15", "inverse-surface": "#352f2e", "primary-container": "#bd5630", "surface-container-highest": "#eae0de", "inverse-on-surface": "#f9eeec", "on-primary-fixed": "#390c00", "on-primary-container": "#fffbff", "on-surface": "#1f1b1a", "surface-container-high": "#f0e6e4", "error": "#ba1a1a", "surface-container": "#f6ecea", "surface-container-lowest": "#ffffff", "secondary-fixed-dim": "#aad0ae", "on-tertiary-fixed-variant": "#4a463f", "tertiary": "#605b54", "on-background": "#1f1b1a", "outline-variant": "#ddc0b7", "secondary-container": "#c5ecc9", "on-surface-variant": "#56423c", "on-primary-fixed-variant": "#802a05", "surface-container-low": "#fcf1ef", "surface-dim": "#e2d8d6", "on-secondary-fixed": "#00210c", "tertiary-container": "#79746c", "inverse-primary": "#ffb59c", "tertiary-fixed-dim": "#ccc6bc", "on-secondary-fixed-variant": "#2c4e34", "primary": "#9d3e1a", "secondary-fixed": "#c5ecc9", "tertiary-fixed": "#e9e2d7", "on-secondary": "#ffffff", "outline": "#8a726a", "surface-tint": "#a0401c", "on-error": "#ffffff", "secondary": "#44664b", "surface-variant": "#eae0de", "surface-bright": "#fff8f6", "on-error-container": "#93000a", "on-tertiary": "#ffffff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1rem", "gutter-lg": "2rem", "space-md": "1rem", "space-xs": "0.25rem", "margin-lg": "3.5rem", "space-xl": "2.5rem", "space-sm": "0.5rem", "gutter-md": "1.5rem", "margin-md": "2rem", "margin": "1rem", "space-lg": "1.5rem" }, "fontFamily": { "title-lg": ["Plus Jakarta Sans"], "headline-md": ["Newsreader"], "label-md": ["Plus Jakarta Sans"], "headline-sm": ["Newsreader"], "label-lg": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Newsreader"], "body-md": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-lg": ["Newsreader"], "label-sm": ["Plus Jakarta Sans"], "display": ["Newsreader"], "title-sm": ["Plus Jakarta Sans"], "display-mobile": ["Newsreader"] }, "fontSize": { "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "700"}], "headline-md": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}], "headline-sm": ["22px", {"lineHeight": "30px", "fontWeight": "600"}], "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}], "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}], "title-md": ["18px", {"lineHeight": "26px", "fontWeight": "600"}], "body-lg": ["16px", {"lineHeight": "26px", "fontWeight": "400"}], "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}], "headline-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "600"}], "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}], "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "500"}], "title-sm": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "display-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "500"}] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-28 px-gutter flex flex-col justify-between py-space-xs"><div class="flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="Gifts Galore Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDa_epM7AsiMoXWonXGrJcSOKN4DLSjODNUDIjq8O-l2hUh7RhwaMSjxMep_6U1-5qFyIqQGZXL_Y8KJirwWyudFxWqNLZjJERDeL-EgRYws2JbPyPnwaGMKQfLxfwHNcFTzArfRmG0u5_a96T157PIbjcEGybmgJ23e8JGzBxuBlRLZSy5jZVIAF7enYpmQtULntu30nG8sW0WoNRidvNi-Im9CBIJjwA6fYDqbB8jpQYViPUgRSy"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-1.5"><span class="font-title-md text-title-md text-on-surface truncate">Gifts Galore</span><span class="font-headline-sm text-headline-sm text-primary hidden">Explore</span></div><div class="flex items-center gap-1 text-on-surface-variant"><span class="material-symbols-outlined text-[14px] text-primary">location_on</span><span class="font-label-sm text-label-sm tracking-wide text-on-surface-variant">Loharu, HR</span></div></div></div><div class="flex items-center gap-1 flex-shrink-0"><button aria-label="Search" class="w-11 h-11 flex items-center justify-center text-on-surface hover:text-primary transition-colors"><span class="material-symbols-outlined text-2xl">search</span></button><button aria-label="Shopping Bag" class="relative w-11 h-11 flex items-center justify-center text-on-surface hover:text-primary transition-colors"><span class="material-symbols-outlined text-2xl">shopping_bag</span><span class="absolute top-1.5 right-1.5 w-4 h-4 bg-primary text-on-primary font-label-sm text-[10px] leading-none rounded-full flex items-center justify-center font-bold">2</span></button><div class="w-11 h-11 flex items-center justify-center ml-0.5"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-Pvrxjn1Xds0ypPJCTR6nh8QNKsY_pxch47GHvprmEui4Dx8UW7oI9AkuCctXIqBZJxVwEUxSSX4PVaohfTkbvKPngeIQ3uJiauWglyDnSMi8wWLRvAfgSuwhRxw0sNk3tvAGs2DIIya9ouam_B1U33ejUQRzs09D_0FUqv6JrLwec9bD6_OeWh_xZwyZrpxBM_9j2rYaSnvogkM5tRgdJNm4Aimx-RzKkxg5E7zKIzPxSvuD1tYI"/></div></div></div><div class="flex items-center justify-between gap-space-sm pb-1"><button class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container hover:bg-surface-container-high transition-colors text-left"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="font-label-md text-label-md text-on-surface font-semibold">Customer View</span><span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span></button><div class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-secondary-container/40 text-on-secondary-container"><span class="material-symbols-outlined text-[14px] text-secondary">lock</span><span class="font-label-sm text-label-sm font-medium">TLS Secured</span></div></div></div></header><main class="flex flex-col relative w-full pt-28 pb-20 bg-surface min-h-screen"><div class="flex flex-col w-full pb-8">
+<!-- Mode Preview Switcher Bar -->
+<section class="px-gutter pt-space-sm pb-space-xs">
+<div class="bg-surface-container rounded-xl p-space-xs flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-xs pl-space-xs">
+<span class="material-symbols-outlined text-primary text-lg">visibility</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Preview Perspective</span>
+</div>
+<div class="flex items-center bg-surface-container-high rounded-lg p-0.5" id="modeSwitchContainer">
+<button class="flex items-center gap-1 px-space-sm py-1 rounded-md bg-primary text-on-primary transition-all duration-200" id="customerModeBtn" onclick="toggleMode('customer')">
+<span class="material-symbols-outlined text-[14px]">face</span>
+<span class="font-label-md text-label-md">Customer</span>
+</button>
+<button class="flex items-center gap-1 px-space-sm py-1 rounded-md text-on-surface-variant hover:text-on-surface transition-all duration-200" id="sellerModeBtn" onclick="toggleMode('seller')">
+<span class="material-symbols-outlined text-[14px]">storefront</span>
+<span class="font-label-md text-label-md">Artisan Seller</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Seller Quick Metrics (Hidden by default in Customer view) -->
+<section class="hidden px-gutter pt-space-xs pb-space-sm" id="sellerMetricsDrawer">
+<div class="bg-surface-container-high rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-lg text-label-lg text-on-surface">Loharu Workshop Portal</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-secondary-container px-2 py-0.5 rounded-full font-bold">Store Live</span>
+</div>
+<div class="grid grid-cols-3 gap-2 text-center pt-1">
+<div class="bg-surface-container-lowest p-2 rounded-lg">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Active Inquiries</p>
+<p class="font-title-md text-title-md text-primary font-bold">14</p>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded-lg">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Bespoke Quotes</p>
+<p class="font-title-md text-title-md text-on-surface font-bold">6 Pending</p>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded-lg">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Dispatch Sched.</p>
+<p class="font-title-md text-title-md text-secondary font-bold">Today 4pm</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Warm Welcome & Occasion Banner -->
+<section class="px-gutter pt-space-xs pb-space-md">
+<div class="relative overflow-hidden rounded-2xl bg-surface-container-low shadow-sm p-space-md">
+<div class="absolute -right-10 -bottom-10 w-44 h-44 rounded-full bg-primary-fixed/30 pointer-events-none"></div>
+<div class="absolute right-8 top-3 text-primary-fixed-dim/40 pointer-events-none">
+<span class="material-symbols-outlined text-6xl">featured_seasonal_and_gifts</span>
+</div>
+<div class="relative z-10 flex flex-col gap-space-xs">
+<div class="inline-flex items-center gap-1.5 self-start px-space-sm py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed">
+<span class="material-symbols-outlined text-[13px]">handshake</span>
+<span class="font-label-sm text-label-sm tracking-wide">Artisan Guild • Haryana</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mt-1">
+          Handcrafted Joy <br/><span class="text-primary italic">from Loharu</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Celebrate life's timeless milestones with locally sculpted brassware, personalized keepsakes, and heirloom bespoke parcels.
+        </p>
+<!-- Quick Gifting Model Legend Info -->
+<div class="flex items-center gap-2 mt-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm text-secondary">verified</span>
+<span class="font-label-sm text-label-sm">Bespoke proofing approval before any crafting starts</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Filter Chips (Gifting Fulfillment Models) -->
+<section class="pb-space-md">
+<div class="flex items-center gap-2 px-gutter overflow-x-auto no-scrollbar scroll-smooth">
+<button class="filter-chip flex-shrink-0 flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-primary text-on-primary shadow-sm font-label-md text-label-md transition-colors" onclick="selectFilter(this, 'all')">
+<span class="material-symbols-outlined text-[16px]">arrow_back_ios_new</span>
+<span>All Gifts</span>
+</button>
+<button class="filter-chip flex-shrink-0 flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-colors" onclick="selectFilter(this, 'ready')">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Ready-Made (Express Ship)</span>
+</button>
+<button class="filter-chip flex-shrink-0 flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-colors" onclick="selectFilter(this, 'custom')">
+<span class="material-symbols-outlined text-[15px] text-primary">draw</span>
+<span>Customizable (Name / Photo)</span>
+</button>
+<button class="filter-chip flex-shrink-0 flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-colors" onclick="selectFilter(this, 'bespoke')">
+<span class="material-symbols-outlined text-[15px] text-tertiary">request_quote</span>
+<span>On-Demand Bespoke</span>
+</button>
+</div>
+</section>
+<!-- Festival & Gifting Occasion Carousel -->
+<section class="pb-space-lg">
+<div class="px-gutter flex items-center justify-between pb-space-xs">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Curated by Occasion</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Celebrate moments with heartfelt artistry</p>
+</div>
+<a class="font-label-md text-label-md text-primary flex items-center gap-0.5 hover:underline" href="#">
+        See All
+        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Horizontal scroll carousel -->
+<div class="flex gap-3 px-gutter overflow-x-auto no-scrollbar pt-1">
+<!-- Occasion Card 1 -->
+<div class="flex-shrink-0 w-44 rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden flex flex-col group cursor-pointer">
+<div class="relative h-28 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Intimate traditional Indian wedding gift hamper with silk fabric wrap, ceremonial sweets, marigold petals, and brass diya, warm ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0qjAtA1NRw5rgXfj4-z2YRveTXUUBjuJjHKkjoaAuneNrVM5iHKpoSWdhd0t1Uh8HHhj_AznnDboiz0npXwhtKGOFt3HmVNcvqRUhOOIUk24s4dsMxwmwVAYLcK_nU9xuWqjNZqdPqrMuA-MnXNAmC29BpvlxZ4LAFiFIISNdEGZNN11ZDmbLcWCb6STnQJKaeAZZu7eUy_OVoLBC6-bTxMxihdluFyrMnykSjGBIllhv2wMBkY29"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/60 via-transparent to-transparent"></div>
+<span class="absolute bottom-2 left-2 px-2 py-0.5 rounded-md bg-surface/90 backdrop-blur-sm font-label-sm text-label-sm text-primary font-semibold">Bestseller</span>
+</div>
+<div class="p-space-sm flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Wedding &amp; Anniversary</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Heirloom Keepsakes</span>
+</div>
+</div>
+<!-- Occasion Card 2 -->
+<div class="flex-shrink-0 w-44 rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden flex flex-col group cursor-pointer">
+<div class="relative h-28 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Chic birthday celebration hamper with hand-bound journal, artisanal scented soy wax candle, and personalized gourmet confectionery on wood table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWGFpNan9YRFAN2Q9BqZxH7ss46ZKXzCpxZ6_bnNFUzhzuCFMxAq7aknSTNq0ud6yGEXyqDW5tPYnqpZKIF_drDERAh3Znts1-aOJDw5epJZFiMRmfeECuDw0EiST_dnqTApYYMCCKwTLyLkryYm2R9G47zCTz9uNCbaDIgSSEvb3Ymeen_9KWCUV_AWJ2fwUPyYqT-4p4Gl2TxW4RxyD4z_RQLVfZZHjk8RAuC4M0O_Ne8KY947KI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/60 via-transparent to-transparent"></div>
+<span class="absolute bottom-2 left-2 px-2 py-0.5 rounded-md bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">Personalized</span>
+</div>
+<div class="p-space-sm flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Birthday Hampers</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Vibrant &amp; Playful</span>
+</div>
+</div>
+<!-- Occasion Card 3 -->
+<div class="flex-shrink-0 w-44 rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden flex flex-col group cursor-pointer">
+<div class="relative h-28 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Sophisticated corporate gifting suite featuring engraved walnut desk accessories, premium pen set, and leather bound padfolio in luxury packaging" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwDDtohWUBcD3OVS9IDlrwirCH_Xq2U4ucicmprnK0f3rjLZl1U_Rg0D7B7EpJZ3h4O1odVFWbqnjSf0n5WXWzebEpP3hplY6lYQkPMnIwnl83JmnbBZrVTtyAEOz6ZviI9mUmvKYHWP1x-uS9HQ2rYQzOlu6opBzabgKp8Vv22nfSo8s41zcRjgwwlu99dOONUPDRc33V9Uttk2NoUVIkVdhwwgdb0RJoXU-HTnmR-8m2eaEI3Wct"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/60 via-transparent to-transparent"></div>
+<span class="absolute bottom-2 left-2 px-2 py-0.5 rounded-md bg-surface/90 backdrop-blur-sm font-label-sm text-label-sm text-tertiary font-semibold">Bulk Rates</span>
+</div>
+<div class="p-space-sm flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Corporate Tokens</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Polished Heritage</span>
+</div>
+</div>
+<!-- Occasion Card 4 -->
+<div class="flex-shrink-0 w-44 rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden flex flex-col group cursor-pointer">
+<div class="relative h-28 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Handcrafted terracotta pottery pots with delicate geometric patterns and solid brass hammered incense holder from Loharu workshops" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcE2_CjKxGxwueI93ZFhZA2KTg2Rm7R7QLVwiexhK4TKkl--Ep1JVvTHiKfLU745JeEb32JFjIFmUWcWGMWmFC5hVd1WnT1mu0Bm75XFmZftwbYcYxVcOE2hQY3H1BQgV4vw4YZpKAWdfkjp1Mn-OMfIOPZXKiD5FLdebp9y5X37goNi_a-WzsMd3-egk5GVNVw84xj0FQGn8HagcbyLGdDXGmLgNdrc0bkCvo5OLM3zSwsLBaoAKd"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/60 via-transparent to-transparent"></div>
+<span class="absolute bottom-2 left-2 px-2 py-0.5 rounded-md bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">Local Heritage</span>
+</div>
+<div class="p-space-sm flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Brass &amp; Terracotta</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Loharu Classics</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Products Section Header -->
+<section class="px-gutter pb-space-sm flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Artisan Treasures</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Handmade locally with customizable delight</p>
+</div>
+<div class="flex items-center gap-1 bg-surface-container rounded-lg px-2 py-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span class="font-label-sm text-label-sm">Sort: Popular</span>
+</div>
+</section>
+<!-- Featured Products Grid (2-column mobile layout) -->
+<section class="px-gutter pb-space-lg">
+<div class="grid grid-cols-2 gap-space-sm" id="productsGrid">
+<!-- Product Card 1: Keepsake Box (CUSTOMIZABLE) -->
+<article class="product-card flex flex-col rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden relative" data-category="custom">
+<div class="relative aspect-[4/5] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Finely engraved wooden keepsake jewelry box with custom calligraphy name on lid, brass hinges, resting on handmade cotton linen in soft afternoon light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3lwe8xXpq2PxOc4-jRXWN2Bu4bya7Hx2dN18VdRIX4P-vGlTM3c6djo6L5hp7Hguc0g0cGrvNWBoeAsSyYADkxz3ZcZ2s0mRWR9e2cya3Ohj-sgwr77h7ibB0SN5SKp7VpldRc67RJDTAzCBvAugIHVjn9LOJe5Of1j9tfp0mvkdaX5zoIaYdlliwB0wDrPJu_LA_USxxiZCkNou3aQ9RabYkpUhh4bBD_6tSDhO1GWF30pcC-xTV"/>
+<!-- Fulfillment badge -->
+<div class="absolute top-2 left-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed/80 backdrop-blur-sm text-on-primary-fixed font-label-sm text-[10px] font-bold">
+<span class="material-symbols-outlined text-[11px]">edit_note</span>
+              CUSTOM
+            </span>
+</div>
+<!-- Wishlist toggle -->
+<button aria-label="Save to Wishlist" class="absolute top-2 right-2 w-7 h-7 rounded-full bg-surface/85 backdrop-blur-sm flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" onclick="toggleWishlist(this)">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="p-space-sm flex flex-col flex-grow justify-between gap-1">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-[11px] text-on-surface-variant truncate">Gifts Galore Official</span>
+<span class="font-label-sm text-[10px] text-secondary font-medium">In Stock</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface line-clamp-2 mt-0.5">Bespoke Wooden Engraved Keepsake Box</h3>
+<p class="font-body-sm text-[11px] text-on-surface-variant line-clamp-1">Laser custom name &amp; quote</p>
+</div>
+<div class="pt-2 flex flex-col gap-2">
+<div class="flex items-baseline justify-between">
+<span class="font-title-lg text-title-lg text-primary">₹1,499</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant line-through">₹1,899</span>
+</div>
+<button class="w-full py-1.5 px-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center gap-1 shadow-sm active:scale-95 transition-all" onclick="openPersonalizeSheet('Bespoke Wooden Engraved Keepsake Box', 1499)">
+<span class="material-symbols-outlined text-[15px]">edit</span>
+              Personalize
+            </button>
+</div>
+</div>
+</article>
+<!-- Product Card 2: Brass Incense Set (READY_MADE) -->
+<article class="product-card flex flex-col rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden relative" data-category="ready">
+<div class="relative aspect-[4/5] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Traditional Loharu handcrafted brass incense burner with floral filigree cutouts and aromatic beeswax candle cubes, warm radiant reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAITPunGKAxkfYMAjFqQx8z7a6O0NPbP3lS1bSwvVsy_hdtwuOKZj3UbzyztAEN84CbhvyC1jG_9-fItnML3w3knVdVo_z3f4ulQ1-mzVZ1YtlPvlIkqO_YOT-Kpn92d-YgjUAev34kFzMmb1idE9AJHkWSVYxrauciyHT1wTts24TA2_POkSyNXzkMNwlAGrlbhfB9z-WElk-RjLb7KVNSQYFk14y8FVK5vpSwA1MPFu_ASuPPpyjy"/>
+<!-- Fulfillment badge -->
+<div class="absolute top-2 left-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-[10px] font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              EXPRESS
+            </span>
+</div>
+<!-- Wishlist toggle -->
+<button aria-label="Save to Wishlist" class="absolute top-2 right-2 w-7 h-7 rounded-full bg-surface/85 backdrop-blur-sm flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" onclick="toggleWishlist(this)">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="p-space-sm flex flex-col flex-grow justify-between gap-1">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-[11px] text-on-surface-variant truncate">Loharu Crafts Collective</span>
+<span class="font-label-sm text-[10px] text-secondary font-semibold">Today Dispatch</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface line-clamp-2 mt-0.5">Artisanal Loharu Brass Incense &amp; Candle Set</h3>
+<p class="font-body-sm text-[11px] text-on-surface-variant line-clamp-1">Gift packed with brass tongs</p>
+</div>
+<div class="pt-2 flex flex-col gap-2">
+<div class="flex items-baseline justify-between">
+<span class="font-title-lg text-title-lg text-on-surface">₹899</span>
+<span class="font-body-sm text-[11px] text-secondary font-medium">Free Gift Wrap</span>
+</div>
+<button class="w-full py-1.5 px-2 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 hover:bg-primary hover:text-on-primary active:scale-95 transition-all" onclick="quickAddToCart('Artisanal Loharu Brass Incense &amp; Candle Set')">
+<span class="material-symbols-outlined text-[15px]">keyboard_double_arrow_left</span>
+              Add to Bag
+            </button>
+</div>
+</div>
+</article>
+<!-- Product Card 3: Resin Wall Clock (CUSTOMIZABLE) -->
+<article class="product-card flex flex-col rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden relative" data-category="custom">
+<div class="relative aspect-[4/5] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Modern handcrafted epoxy resin floral wall clock with embedded real preserved petals, gold Roman numerals, and couple photograph placeholder insert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3VR-pheCrlNwkxD3HlKt92UMfci_c_V05oSVh2oUbfxCm8xVzwthTvQRhdyN_scMDvUmAR5euJdydp2psLQTrbSRZxHhlkrXL20ZR3hT0l8JLbEg1OHP4v8C6zlO2NKbIgFZUD0hb3JaHy8MO7KVavH2rGxvMkLvC8XHRx4g6ZeR9XjFh0V4zIh_ExPbxO8pYlAGrmZ1vUfdu3lJWdVNzjSmlzgpRNnms6SOeO8lBwAANJRgryfWl"/>
+<!-- Fulfillment badge -->
+<div class="absolute top-2 left-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed/80 backdrop-blur-sm text-on-primary-fixed font-label-sm text-[10px] font-bold">
+<span class="material-symbols-outlined text-[11px]">photo_camera</span>
+              PHOTO EMBED
+            </span>
+</div>
+<!-- Wishlist toggle -->
+<button aria-label="Save to Wishlist" class="absolute top-2 right-2 w-7 h-7 rounded-full bg-surface/85 backdrop-blur-sm flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" onclick="toggleWishlist(this)">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="p-space-sm flex flex-col flex-grow justify-between gap-1">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-[11px] text-on-surface-variant truncate">Kala Mandir Studio</span>
+<span class="font-label-sm text-[10px] text-primary font-medium">Photo Proofing</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface line-clamp-2 mt-0.5">Personalized Floral Resin Wall Clock</h3>
+<p class="font-body-sm text-[11px] text-on-surface-variant line-clamp-1">Upload photo &amp; custom name</p>
+</div>
+<div class="pt-2 flex flex-col gap-2">
+<div class="flex items-baseline justify-between">
+<span class="font-title-lg text-title-lg text-primary">₹2,199</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant line-through">₹2,750</span>
+</div>
+<button class="w-full py-1.5 px-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center gap-1 shadow-sm active:scale-95 transition-all" onclick="openPersonalizeSheet('Personalized Floral Resin Wall Clock', 2199)">
+<span class="material-symbols-outlined text-[15px]">add_photo_alternate</span>
+              Add Photo
+            </button>
+</div>
+</div>
+</article>
+<!-- Product Card 4: Royal Velvet Hamper (ON_DEMAND) -->
+<article class="product-card flex flex-col rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden relative" data-category="bespoke">
+<div class="relative aspect-[4/5] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Deep royal maroon velvet trunk hamper with monogrammed gold metallic lock clasp, silk lining, gourmet dry fruits and brass memorabilia" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnhw9xH26ypgXHpP8xfABFNI64Op5PcFxxaZTKC96t_qWtXWUJSAhW-EsyrvuJ4rUkjMnKsI7csWWYPtafdYJ6fsCVHAx7GCYv6cXker7szswHyBW_b3r_a2rKWyQa-HmbFM9ecXDfUhEu7mGitvLG5UmGUfOuOqI3T3grkEfEXFlRUWjVEVViVd8qib3-vu-0HiWUOzMFWf_5N8VCdfhIhDjs_y_DErQGxGg76Y12x_WeCgYjmkVl"/>
+<!-- Fulfillment badge -->
+<div class="absolute top-2 left-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-[10px] font-bold">
+<span class="material-symbols-outlined text-[11px]">architecture</span>
+              ON-DEMAND
+            </span>
+</div>
+<!-- Wishlist toggle -->
+<button aria-label="Save to Wishlist" class="absolute top-2 right-2 w-7 h-7 rounded-full bg-surface/85 backdrop-blur-sm flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" onclick="toggleWishlist(this)">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="p-space-sm flex flex-col flex-grow justify-between gap-1">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-[11px] text-on-surface-variant truncate">Master Guild Bespoke</span>
+<span class="font-label-sm text-[10px] text-tertiary font-semibold">4h Review</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface line-clamp-2 mt-0.5">Custom Royal Velvet Hamper Box</h3>
+<p class="font-body-sm text-[11px] text-on-surface-variant line-clamp-1">Tailored contents &amp; size</p>
+</div>
+<div class="pt-2 flex flex-col gap-2">
+<div class="flex items-baseline justify-between">
+<span class="font-title-sm text-title-sm text-on-surface">Custom Quotation</span>
+</div>
+<button class="w-full py-1.5 px-2 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md flex items-center justify-center gap-1 active:scale-95 transition-all" onclick="openQuoteModal('Custom Royal Velvet Hamper Box')">
+<span class="material-symbols-outlined text-[15px]">send_time_extension</span>
+              Request Quote
+            </button>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Artisan Spotlight: Loharu Master Craftsmen -->
+<section class="px-gutter pb-space-lg">
+<div class="bg-surface-container-low rounded-2xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Senior Indian artisan craftsman from Haryana smiling gently in his brass metalwork workshop surrounded by traditional shaping tools" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzmqB8u1lNkd0o0KpdsJpXtkZaRysQDNMJjsNpEFyVIFaql0KnhEbWJnai69Sr24a672SBafVD9s_WXBfDG5jJDBi6DQw0HvcxlsOpLlCK-4_kH_On6zxxUohSXVuCtD_pdrk-2TwABDGRvGy-OaVD1iy4L1RGlV6Gk5Z-0UTfNjMef5rqFlVl-x2BaFEgkpHKnmrGgAZo9GjYeQ5knb7CLd5sVWkOw9eUlCbK8FkvrXvD1-abU5xL"/>
+<div>
+<h4 class="font-title-sm text-title-sm text-on-surface">Master Ramkishan Verma</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">3rd-Gen Brass Sculptor • Ward 4, Loharu</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-secondary-container px-2 py-0.5 rounded-full font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">verified</span>
+          Verified
+        </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">
+        "Every brass bell and keepsake box carries the blessing of Haryana's soil. When you send our crafts, you send timeless warmth."
+      </p>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-3">
+<div class="flex items-center text-primary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-bold ml-1">4.9</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant ml-0.5">(280+ gifts sent)</span>
+</div>
+</div>
+<button class="font-label-md text-label-md text-primary font-semibold hover:underline flex items-center">
+          Visit Guild
+          <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Trust & Security Banner -->
+<section class="px-gutter pb-space-lg">
+<div class="rounded-2xl bg-surface-container-high p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl">shield_lock</span>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface">Pledge of Authentic Gifting</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Peace of mind for givers &amp; recipients alike</p>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-space-sm">
+<!-- Trust item 1 -->
+<div class="flex items-start gap-space-sm bg-surface-container-lowest p-space-sm rounded-xl">
+<div class="w-8 h-8 rounded-lg bg-secondary-container flex items-center justify-center flex-shrink-0 text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+<div>
+<h4 class="font-title-sm text-[14px] text-on-surface">100% Verified Loharu Sellers</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Every artisan is hand-vetted in Loharu with certified provenance and quality controls.</p>
+</div>
+</div>
+<!-- Trust item 2 -->
+<div class="flex items-start gap-space-sm bg-surface-container-lowest p-space-sm rounded-xl">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed flex items-center justify-center flex-shrink-0 text-on-primary-fixed">
+<span class="material-symbols-outlined text-[18px]">featured_seasonal_and_gifts</span>
+</div>
+<div>
+<h4 class="font-title-sm text-[14px] text-on-surface">Direct Recipient Gifting</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Invoices safely hidden, handwritten wax-sealed notes, and discreet aesthetic packaging included.</p>
+</div>
+</div>
+<!-- Trust item 3 -->
+<div class="flex items-start gap-space-sm bg-surface-container-lowest p-space-sm rounded-xl">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center flex-shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+</div>
+<div>
+<h4 class="font-title-sm text-[14px] text-on-surface">Haryana &amp; PAN-India Express</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Zero-breakage thermocool cushioning, real-time tracking, and express doorstep transit.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bespoke Personalization Drawer Modal (Hidden by Default) -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm hidden flex-col justify-end transition-opacity duration-300" id="personalizeModal">
+<div class="bg-surface rounded-t-3xl max-h-[751px] overflow-y-auto p-gutter flex flex-col gap-space-md shadow-2xl">
+<div class="flex items-center justify-between pb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">draw</span>
+<h3 class="font-title-lg text-title-lg text-on-surface" id="modalProductName">Personalize Your Keepsake</h3>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:text-primary" onclick="closePersonalizeSheet()">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-sm">
+<label class="font-label-md text-label-md text-on-surface">Custom Engraving Text / Name</label>
+<input class="w-full px-3 py-2.5 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none" id="customTextInput" placeholder="e.g. For Priya &amp; Aman • Dec 2024" type="text"/>
+<span class="font-label-sm text-[11px] text-on-surface-variant">Max 40 characters. Laser font choice will be shared via WhatsApp.</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<label class="font-label-md text-label-md text-on-surface">Select Ribbon Wrap Swatch</label>
+<div class="flex items-center gap-3">
+<button class="ribbon-btn w-9 h-9 rounded-full bg-primary ring-2 ring-primary ring-offset-2 flex items-center justify-center text-on-primary" onclick="selectRibbon(this, 'Terracotta')"></button>
+<button class="ribbon-btn w-9 h-9 rounded-full bg-secondary flex items-center justify-center text-on-secondary" onclick="selectRibbon(this, 'Sage Green')"></button>
+<button class="ribbon-btn w-9 h-9 rounded-full bg-tertiary flex items-center justify-center text-on-tertiary" onclick="selectRibbon(this, 'Gold Amber')"></button>
+<span class="font-body-sm text-body-sm text-on-surface-variant ml-2" id="selectedRibbonText">Terracotta Satin</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<label class="font-label-md text-label-md text-on-surface">Handwritten Message on Greeting Card</label>
+<textarea class="w-full px-3 py-2.5 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none resize-none" placeholder="Write a warm note for the recipient. We write it with archival dip-pen ink..." rows="3"></textarea>
+</div>
+<div class="pt-2 flex items-center justify-between gap-3">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Total with Customization</span>
+<span class="font-title-lg text-title-lg text-primary font-bold" id="modalPrice">₹1,499</span>
+</div>
+<button class="flex-1 py-3 px-4 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg shadow-md hover:bg-primary-container active:scale-95 transition-all text-center" onclick="confirmPersonalization()">
+          Proceed with Personalization
+        </button>
+</div>
+</div>
+</div>
+<!-- Toast Notification -->
+<div class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 bg-inverse-surface text-inverse-on-surface px-4 py-2.5 rounded-full shadow-lg font-label-md text-label-md flex items-center gap-2 opacity-0 pointer-events-none transition-all duration-300" id="toastNotification">
+<span class="material-symbols-outlined text-[16px] text-secondary-container">check_circle</span>
+<span id="toastMessage">Item added to gifting bag!</span>
+</div>
+</div>
+<script>
+  // Filter Selection
+  function selectFilter(button, filterType) {
+    document.querySelectorAll('.filter-chip').forEach(btn => {
+      btn.classList.remove('bg-primary', 'text-on-primary');
+      btn.classList.add('bg-surface-container', 'text-on-surface');
+    });
+    button.classList.remove('bg-surface-container', 'text-on-surface');
+    button.classList.add('bg-primary', 'text-on-primary');
+
+    const cards = document.querySelectorAll('.product-card');
+    cards.forEach(card => {
+      const category = card.getAttribute('data-category');
+      if (filterType === 'all' || category === filterType) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  // Perspective Mode Switcher
+  function toggleMode(mode) {
+    const customerBtn = document.getElementById('customerModeBtn');
+    const sellerBtn = document.getElementById('sellerModeBtn');
+    const sellerDrawer = document.getElementById('sellerMetricsDrawer');
+
+    if (mode === 'seller') {
+      sellerBtn.classList.add('bg-primary', 'text-on-primary');
+      sellerBtn.classList.remove('text-on-surface-variant');
+      customerBtn.classList.remove('bg-primary', 'text-on-primary');
+      customerBtn.classList.add('text-on-surface-variant');
+      sellerDrawer.classList.remove('hidden');
+      showToast('Switched to Loharu Artisan Seller Mode');
+    } else {
+      customerBtn.classList.add('bg-primary', 'text-on-primary');
+      customerBtn.classList.remove('text-on-surface-variant');
+      sellerBtn.classList.remove('bg-primary', 'text-on-primary');
+      sellerBtn.classList.add('text-on-surface-variant');
+      sellerDrawer.classList.add('hidden');
+      showToast('Switched to Customer Exploration View');
+    }
+  }
+
+  // Wishlist toggle
+  function toggleWishlist(button) {
+    const icon = button.querySelector('.material-symbols-outlined');
+    const isFilled = icon.style.fontVariationSettings?.includes("'FILL' 1");
+    if (isFilled) {
+      icon.style.fontVariationSettings = "'FILL' 0";
+      icon.classList.remove('text-primary');
+      showToast('Removed from wish parcel');
+    } else {
+      icon.style.fontVariationSettings = "'FILL' 1";
+      icon.classList.add('text-primary');
+      showToast('Saved to your Loharu Wishlist ❤️');
+    }
+  }
+
+  // Personalization Sheet Modal
+  function openPersonalizeSheet(title, price) {
+    document.getElementById('modalProductName').innerText = title;
+    document.getElementById('modalPrice').innerText = '₹' + price;
+    document.getElementById('personalizeModal').classList.remove('hidden');
+    document.getElementById('personalizeModal').classList.add('flex');
+  }
+
+  function closePersonalizeSheet() {
+    document.getElementById('personalizeModal').classList.add('hidden');
+    document.getElementById('personalizeModal').classList.remove('flex');
+  }
+
+  function selectRibbon(btn, colorName) {
+    document.querySelectorAll('.ribbon-btn').forEach(b => b.classList.remove('ring-2', 'ring-primary', 'ring-offset-2'));
+    btn.classList.add('ring-2', 'ring-primary', 'ring-offset-2');
+    document.getElementById('selectedRibbonText').innerText = colorName + ' Satin';
+  }
+
+  function confirmPersonalization() {
+    closePersonalizeSheet();
+    showToast('Keepsake configured! Added to gifting cart.');
+  }
+
+  function quickAddToCart(itemName) {
+    showToast(`Added ${itemName.split(' ')[0]} to Gifting Bag!`);
+  }
+
+  function openQuoteModal(itemName) {
+    showToast(`Bespoke brief sent for "${itemName}". Studio reviews in 4h.`);
+  }
+
+  // Toast Helper
+  function showToast(message) {
+    const toast = document.getElementById('toastNotification');
+    const toastMsg = document.getElementById('toastMessage');
+    toastMsg.innerText = message;
+    toast.classList.remove('opacity-0', 'pointer-events-none');
+    toast.classList.add('opacity-100');
+    setTimeout(() => {
+      toast.classList.remove('opacity-100');
+      toast.classList.add('opacity-0', 'pointer-events-none');
+    }, 2500);
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]" data-active-classes="text-primary font-semibold"><div class="flex items-center justify-around h-16 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center w-14 h-full gap-0.5 transition-colors text-primary font-semibold" data-path="explore" href="#"><span class="material-symbols-outlined text-2xl">storefront</span><span class="font-label-sm text-label-sm text-center">Explore</span></a><a class="flex flex-col items-center justify-center w-14 h-full gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="categories" href="#"><span class="material-symbols-outlined text-2xl">grid_view</span><span class="font-label-sm text-label-sm text-center">Categories</span></a><a class="flex flex-col items-center justify-center w-16 h-full gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="custom-bespoke" href="#"><span class="material-symbols-outlined text-2xl">auto_awesome</span><span class="font-label-sm text-label-sm text-center">Bespoke</span></a><a class="flex flex-col items-center justify-center w-14 h-full gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="orders-and-gifts" href="#"><span class="material-symbols-outlined text-2xl">local_shipping</span><span class="font-label-sm text-label-sm text-center">Orders</span></a><a class="flex flex-col items-center justify-center w-14 h-full gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="profile-store" href="#"><span class="material-symbols-outlined text-2xl">account_circle</span><span class="font-label-sm text-label-sm text-center">Profile</span></a></div></nav></body></html>

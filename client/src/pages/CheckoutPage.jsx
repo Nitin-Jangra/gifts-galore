@@ -163,12 +163,36 @@ export default function CheckoutPage() {
                   </div>
 
                   <div className="col-12">
-                    <label className="form-label small fw-semibold">Personal Greeting Card Message</label>
+                    <div className="d-flex justify-content-between align-items-center mb-1">
+                      <label className="form-label small fw-semibold mb-0">Personal Greeting Card Message</label>
+                      <span className="text-muted small" style={{ fontSize: '0.72rem' }}>{formData.giftMessage.length}/500</span>
+                    </div>
+
+                    {/* Stitch Occasion Preset Chips */}
+                    <div className="d-flex flex-wrap gap-1.5 mb-2">
+                      {[
+                        'Wishing you joy, prosperity & love on this special day!',
+                        'Happy Anniversary! May your bond grow stronger with each passing year.',
+                        'Heartiest congratulations on your joyous milestone!',
+                        'With immense love, gratitude and warm blessings.',
+                      ].map((preset, idx) => (
+                        <button
+                          key={idx}
+                          type="button"
+                          className="btn btn-sm btn-light border py-0 px-2 rounded-pill small text-secondary"
+                          style={{ fontSize: '0.73rem' }}
+                          onClick={() => setFormData((prev) => ({ ...prev, giftMessage: preset }))}
+                        >
+                          + {preset.slice(0, 24)}...
+                        </button>
+                      ))}
+                    </div>
+
                     <textarea
                       rows="3"
                       name="giftMessage"
                       className="form-control"
-                      placeholder="Write your heartfelt note to be printed on our premium Gifts Galore greeting card..."
+                      placeholder="Write your heartfelt note to be hand-penned on our Gifts Galore stationery..."
                       value={formData.giftMessage}
                       onChange={handleChange}
                       maxLength={500}

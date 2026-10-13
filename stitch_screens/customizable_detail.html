@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary-fixed": "#ffdbcf", "background": "#fff8f6", "on-secondary-container": "#4a6c50", "on-primary": "#ffffff", "on-tertiary-container": "#fffbff", "primary-fixed-dim": "#ffb59c", "surface": "#fff8f6", "error-container": "#ffdad6", "on-tertiary-fixed": "#1e1b15", "inverse-surface": "#352f2e", "primary-container": "#bd5630", "surface-container-highest": "#eae0de", "inverse-on-surface": "#f9eeec", "on-primary-fixed": "#390c00", "on-primary-container": "#fffbff", "on-surface": "#1f1b1a", "surface-container-high": "#f0e6e4", "error": "#ba1a1a", "surface-container": "#f6ecea", "surface-container-lowest": "#ffffff", "secondary-fixed-dim": "#aad0ae", "on-tertiary-fixed-variant": "#4a463f", "tertiary": "#605b54", "on-background": "#1f1b1a", "outline-variant": "#ddc0b7", "secondary-container": "#c5ecc9", "on-surface-variant": "#56423c", "on-primary-fixed-variant": "#802a05", "surface-container-low": "#fcf1ef", "surface-dim": "#e2d8d6", "on-secondary-fixed": "#00210c", "tertiary-container": "#79746c", "inverse-primary": "#ffb59c", "tertiary-fixed-dim": "#ccc6bc", "on-secondary-fixed-variant": "#2c4e34", "primary": "#9d3e1a", "secondary-fixed": "#c5ecc9", "tertiary-fixed": "#e9e2d7", "on-secondary": "#ffffff", "outline": "#8a726a", "surface-tint": "#a0401c", "on-error": "#ffffff", "secondary": "#44664b", "surface-variant": "#eae0de", "surface-bright": "#fff8f6", "on-error-container": "#93000a", "on-tertiary": "#ffffff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1rem", "gutter-lg": "2rem", "space-md": "1rem", "space-xs": "0.25rem", "margin-lg": "3.5rem", "space-xl": "2.5rem", "space-sm": "0.5rem", "gutter-md": "1.5rem", "margin-md": "2rem", "margin": "1rem", "space-lg": "1.5rem" }, "fontFamily": { "title-lg": ["Plus Jakarta Sans"], "headline-md": ["Newsreader"], "label-md": ["Plus Jakarta Sans"], "headline-sm": ["Newsreader"], "label-lg": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Newsreader"], "body-md": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-lg": ["Newsreader"], "label-sm": ["Plus Jakarta Sans"], "display": ["Newsreader"], "title-sm": ["Plus Jakarta Sans"], "display-mobile": ["Newsreader"] }, "fontSize": { "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "700"}], "headline-md": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}], "headline-sm": ["22px", {"lineHeight": "30px", "fontWeight": "600"}], "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}], "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}], "title-md": ["18px", {"lineHeight": "26px", "fontWeight": "600"}], "body-lg": ["16px", {"lineHeight": "26px", "fontWeight": "400"}], "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}], "headline-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "600"}], "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}], "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "500"}], "title-sm": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "display-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "500"}] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-28 px-gutter flex flex-col justify-between py-space-xs"><div class="flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="Gifts Galore Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDa_epM7AsiMoXWonXGrJcSOKN4DLSjODNUDIjq8O-l2hUh7RhwaMSjxMep_6U1-5qFyIqQGZXL_Y8KJirwWyudFxWqNLZjJERDeL-EgRYws2JbPyPnwaGMKQfLxfwHNcFTzArfRmG0u5_a96T157PIbjcEGybmgJ23e8JGzBxuBlRLZSy5jZVIAF7enYpmQtULntu30nG8sW0WoNRidvNi-Im9CBIJjwA6fYDqbB8jpQYViPUgRSy"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-1.5"><span class="font-title-md text-title-md text-on-surface truncate">Gifts Galore</span><span class="font-headline-sm text-headline-sm text-primary hidden">Explore</span></div><div class="flex items-center gap-1 text-on-surface-variant"><span class="material-symbols-outlined text-[14px] text-primary">location_on</span><span class="font-label-sm text-label-sm tracking-wide text-on-surface-variant">Loharu, HR</span></div></div></div><div class="flex items-center gap-1 flex-shrink-0"><button aria-label="Search" class="w-11 h-11 flex items-center justify-center text-on-surface hover:text-primary transition-colors"><span class="material-symbols-outlined text-2xl">search</span></button><button aria-label="Shopping Bag" class="relative w-11 h-11 flex items-center justify-center text-on-surface hover:text-primary transition-colors"><span class="material-symbols-outlined text-2xl">shopping_bag</span><span class="absolute top-1.5 right-1.5 w-4 h-4 bg-primary text-on-primary font-label-sm text-[10px] leading-none rounded-full flex items-center justify-center font-bold">2</span></button><div class="w-11 h-11 flex items-center justify-center ml-0.5"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-Pvrxjn1Xds0ypPJCTR6nh8QNKsY_pxch47GHvprmEui4Dx8UW7oI9AkuCctXIqBZJxVwEUxSSX4PVaohfTkbvKPngeIQ3uJiauWglyDnSMi8wWLRvAfgSuwhRxw0sNk3tvAGs2DIIya9ouam_B1U33ejUQRzs09D_0FUqv6JrLwec9bD6_OeWh_xZwyZrpxBM_9j2rYaSnvogkM5tRgdJNm4Aimx-RzKkxg5E7zKIzPxSvuD1tYI"/></div></div></div><div class="flex items-center justify-between gap-space-sm pb-1"><button class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container hover:bg-surface-container-high transition-colors text-left"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="font-label-md text-label-md text-on-surface font-semibold">Customer View</span><span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span></button><div class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-secondary-container/40 text-on-secondary-container"><span class="material-symbols-outlined text-[14px] text-secondary">lock</span><span class="font-label-sm text-label-sm font-medium">TLS Secured</span></div></div></div></header><main class="flex flex-col relative w-full pt-28 pb-20 bg-surface min-h-screen"><div class="flex flex-col w-full pb-28">
+<!-- Breadcrumb Navigation -->
+<section class="px-gutter pt-3 pb-2">
+<nav class="flex items-center gap-1.5 overflow-x-auto no-scrollbar text-on-surface-variant font-body-sm text-body-sm">
+<a class="hover:text-primary transition-colors flex items-center gap-1 flex-shrink-0" href="#">
+<span class="material-symbols-outlined text-[16px]">home</span>
+<span>Home</span>
+</a>
+<span class="text-outline-variant">/</span>
+<a class="hover:text-primary transition-colors flex-shrink-0" href="#">Keepsake Boxes</a>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface font-medium truncate flex-shrink-0">Bespoke Wooden Box</span>
+</nav>
+</section>
+<!-- Product Title & Verified Artisan Badge -->
+<section class="px-gutter pt-1 pb-3">
+<div class="flex items-center gap-2 mb-1.5 flex-wrap">
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+<span>Customizable Gift</span>
+</div>
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Made to Order • Dispatches in 48h</span>
+</div>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight leading-snug">
+      Bespoke Wooden Engraved Keepsake Box
+    </h1>
+<div class="mt-2 flex items-center justify-between gap-2">
+<a class="flex items-center gap-2 group" href="#">
+<div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">
+          GG
+        </div>
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface group-hover:text-primary transition-colors truncate">Gifts Galore Official</span>
+<span class="material-symbols-outlined text-secondary text-[16px]" style="font-variation-settings: 'FILL' 1;" title="Verified Loharu Artisan">verified</span>
+</div>
+</a>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-primary text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-semibold text-on-surface">4.96</span>
+<span>(142)</span>
+</div>
+</div>
+</section>
+<!-- Interactive Multi-Image Gallery -->
+<section class="px-gutter pb-4">
+<div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-high shadow-sm">
+<img class="w-full h-full object-cover transition-opacity duration-300" data-alt="High-angle artisan editorial photograph of a bespoke handcrafted warm teakwood keepsake memory box resting on a textured linen surface. The hinged lid features elegant cursive gold-foil laser engraving saying Eleanor and Liam. Soft natural daylight illuminates the polished honey-toned wood grain, antique brass clasp, and plush deep forest-green velvet compartments inside." id="mainProductImage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7WBPpW2mWz0Vl817ejy8WoKF_DloUtgPN40-uMLJ36niyB6xP-aYOw5oFvsHVl10S9WwebLlclVui-FpjLfVbYTs5dr9FlBqMIEbNARbgFc8NvgKhGvYwsjyxcQqA9DCuyFMRTaYIkfvR0ruIoOOpuE7Ro1RbrZ93fKxa5r7CHipCRp0LoLpMjNfRplzgzAiTA9kP7TxVT219tP28VKwNe93OcgCS1wkBxCJH3Z_h7Th57rt73eVd"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-sm text-label-sm shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-primary">local_florist</span>
+<span>100% Haryana Teak</span>
+</span>
+</div>
+<button aria-label="Toggle Fullscreen" class="absolute bottom-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface flex items-center justify-center shadow-sm hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">zoom_in</span>
+</button>
+<div class="absolute bottom-3 left-3 bg-inverse-surface/80 text-inverse-on-surface backdrop-blur-md px-2.5 py-0.5 rounded-full font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">location_on</span>
+<span>Crafted in Loharu</span>
+</div>
+</div>
+<!-- Thumbnails Strip -->
+<div class="grid grid-cols-3 gap-2 mt-2.5">
+<button class="thumb-btn flex flex-col items-center p-1 rounded-lg bg-surface-container-lowest shadow-sm ring-2 ring-primary text-left transition-all" onclick="switchHeroImage(0)">
+<div class="w-full aspect-[4/3] rounded overflow-hidden mb-1">
+<img class="w-full h-full object-cover" data-alt="Macro close-up shot of precision laser engraving on warm polished teak wood showing intricate floral corner flourishes and custom script typography with natural charred timber depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlpVpIOZ5llrur1bVvfgjsOqdexd1CHs8jMgLTR63cp0SHYDIxkra225QQwPsebCLq3NOuudSVnYIiL7eHofoC7J5f998VvYdAB6ierHyVUqxPz2CJlWp0nBbQG8uI9ynwYOcPM9YTce1lFkbnFuBb_b9O0TpZbvzY7Rk81H8hUoU1xIt41svCxwF7nEsHL3TbSbha15xAC-5pfXD485lqFohJkMLu_U0f8v8G5xGf8VMSPQvSQW3p"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-medium truncate w-full px-0.5">Engraving Detail</span>
+</button>
+<button class="thumb-btn flex flex-col items-center p-1 rounded-lg bg-surface-container-lowest shadow-sm opacity-75 hover:opacity-100 text-left transition-all" onclick="switchHeroImage(1)">
+<div class="w-full aspect-[4/3] rounded overflow-hidden mb-1">
+<img class="w-full h-full object-cover" data-alt="Top down overhead photograph looking into the open wooden keepsake box showcasing lush emerald green velvet lining dividers for letters, heirlooms, and engraved brass dedication plaque." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW0qMHAD2DhH59V2_xoAcpJJqpwWqoVC7CFDLx0FWSZHjz3K5e0C7mAKEmpJLIHIFkVG9H8CAXTRmfb1KIiSAosL7wfwOT0hdCCpmK0qEGTHD5_s26MF-bPiGCCV4SXaYgvpQjFbSK6DXZ7LZMJzr3p778JYRy88ESyyNF0sKhTMVg99AbJK3wz4rFAoL3hhUbNbH76NG-tyFjO35Up6xI6gdw3xITdg5d0NceKqk5_ziAzwBRkrrh"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium truncate w-full px-0.5">Velvet Lining</span>
+</button>
+<button class="thumb-btn flex flex-col items-center p-1 rounded-lg bg-surface-container-lowest shadow-sm opacity-75 hover:opacity-100 text-left transition-all" onclick="switchHeroImage(2)">
+<div class="w-full aspect-[4/3] rounded overflow-hidden mb-1">
+<img class="w-full h-full object-cover" data-alt="Artisanal gift unboxing presentation featuring the wooden box wrapped in warm handmade cream cotton paper bound with jute twine and a deep burgundy stamped wax seal emblem." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQG9BPbZ1PcZ3zcmruYxpDynuVzZLkPlSvxH5ptKtV9PgUNwWkeM5saw8K3-Dof4LSdMuY15SyNz3ngFwWMdXdaJ8eoqUCMRmIVd8_Yz2Mu55WxGhsi0xl6HNvsKH6rp5QQbAEg3V90M5UX93TDnnLNIBNAmOFmxnir9X6Kz1nvmzhNgF_v_7YUpoeOzF8AhydUyV0z_wmoHo7ulqMQ6zQzSp5CJxH6GC8mbKk7OmuBD_nvO_mBOuC"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium truncate w-full px-0.5">Wax Seal Box</span>
+</button>
+</div>
+</section>
+<!-- Pricing & Value Proposition -->
+<section class="px-gutter pb-4">
+<div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md text-on-surface font-bold" id="priceDisplay">₹1,499</span>
+<span class="font-title-sm text-title-sm text-on-surface-variant line-through">₹1,899</span>
+<span class="font-label-md text-label-md text-primary font-bold bg-primary-fixed/60 px-2 py-0.5 rounded-full">21% OFF</span>
+</div>
+<div class="mt-1 flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>Inclusive of all taxes &amp; laser-proofing</span>
+<span class="text-secondary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">redeem</span>
+          Free Wax Gift Pack
+        </span>
+</div>
+</div>
+</section>
+<!-- Product Options & Variant Selectors -->
+<section class="px-gutter pb-4 space-y-4">
+<!-- Finish Selector -->
+<div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm space-y-2.5">
+<div class="flex items-center justify-between">
+<label class="font-title-sm text-title-sm text-on-surface">Wood Finish Selection</label>
+<span class="font-label-md text-label-md text-primary font-semibold" id="finishLabel">Teak Natural</span>
+</div>
+<div class="grid grid-cols-3 gap-2" id="finishOptions">
+<button class="finish-pill active-pill p-2 rounded-lg bg-surface-container text-left transition-all flex flex-col gap-1 ring-2 ring-primary" onclick="selectFinish('Teak Natural', this)" type="button">
+<div class="w-full h-3 rounded-full bg-[#B26E3B]"></div>
+<span class="font-label-md text-label-md font-semibold text-on-surface leading-tight">Teak Natural</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Bestseller</span>
+</button>
+<button class="finish-pill p-2 rounded-lg bg-surface-container text-left transition-all flex flex-col gap-1" onclick="selectFinish('Dark Walnut', this)" type="button">
+<div class="w-full h-3 rounded-full bg-[#4A3222]"></div>
+<span class="font-label-md text-label-md font-semibold text-on-surface leading-tight">Dark Walnut</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">+₹0</span>
+</button>
+<button class="finish-pill p-2 rounded-lg bg-surface-container text-left transition-all flex flex-col gap-1" onclick="selectFinish('Sheesham Brass', this)" type="button">
+<div class="w-full h-3 rounded-full bg-[#7D4427]"></div>
+<span class="font-label-md text-label-md font-semibold text-on-surface leading-tight">Sheesham Brass</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Heritage</span>
+</button>
+</div>
+</div>
+<!-- Size Selector -->
+<div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm space-y-2.5">
+<div class="flex items-center justify-between">
+<label class="font-title-sm text-title-sm text-on-surface">Box Size</label>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium" id="sizeLabel">Standard (8 × 6 in)</span>
+</div>
+<div class="grid grid-cols-2 gap-2" id="sizeOptions">
+<button class="size-pill active-pill p-3 rounded-lg bg-surface-container text-left transition-all ring-2 ring-primary flex flex-col justify-between" onclick="selectSize('Standard', 1499, this)" type="button">
+<div>
+<div class="font-title-sm text-title-sm text-on-surface font-semibold">Standard Keepsake</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">8 × 6 × 3.5 inches</div>
+</div>
+<div class="mt-2 font-title-sm text-title-sm text-primary font-bold">₹1,499</div>
+</button>
+<button class="size-pill p-3 rounded-lg bg-surface-container text-left transition-all flex flex-col justify-between" onclick="selectSize('Grand', 1949, this)" type="button">
+<div>
+<div class="font-title-sm text-title-sm text-on-surface font-semibold">Grand Heirloom</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">10 × 8 × 4.2 inches</div>
+</div>
+<div class="mt-2 font-title-sm text-title-sm text-on-surface font-semibold">₹1,949 <span class="text-xs font-normal text-on-surface-variant">(+₹450)</span></div>
+</button>
+</div>
+</div>
+</section>
+<!-- Dynamic Seller-Configured Personalization Form -->
+<section class="px-gutter pb-4">
+<div class="rounded-xl bg-surface-container-lowest p-4 shadow-sm space-y-4">
+<!-- Artisan Proofing Banner -->
+<div class="p-3 rounded-lg bg-primary-fixed/40 text-on-primary-fixed flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0 mt-0.5">draw</span>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-primary-fixed font-bold leading-snug">Artisan Proofing Guaranteed</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Your engraving is hand-aligned by our Loharu master craftsman. A digital proof is sent via WhatsApp before laser etching begins.
+          </p>
+</div>
+</div>
+<!-- Field 1: Top Lid Engraving -->
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<label class="font-title-sm text-title-sm text-on-surface font-semibold flex items-center gap-1" for="lidEngravingInput">
+<span>Lid Engraving Text</span>
+<span class="text-primary font-bold">*</span>
+</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium" id="charCounter">27 / 30</span>
+</div>
+<input class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all" id="lidEngravingInput" maxlength="30" oninput="updateMockupText(this.value)" placeholder="e.g. Maya &amp; Kabir • 2024" type="text" value="Eleanor &amp; Liam • 24.11.2024"/>
+<!-- Font Style Picker -->
+<div class="pt-1">
+<label class="font-label-md text-label-md text-on-surface-variant font-medium block mb-1.5">Engraving Typography Style</label>
+<div class="grid grid-cols-3 gap-1.5">
+<button class="font-btn active-font py-2 px-2 rounded-lg bg-surface-container text-center ring-2 ring-primary transition-all" onclick="selectFont('script', this)" type="button">
+<span class="font-headline-sm text-headline-sm italic text-on-surface block leading-tight">Script</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Elegant Cursive</span>
+</button>
+<button class="font-btn py-2 px-2 rounded-lg bg-surface-container text-center transition-all" onclick="selectFont('serif', this)" type="button">
+<span class="font-headline-sm text-headline-sm text-on-surface block leading-tight font-serif">Heritage</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Classic Roman</span>
+</button>
+<button class="font-btn py-2 px-2 rounded-lg bg-surface-container text-center transition-all" onclick="selectFont('sans', this)" type="button">
+<span class="font-title-sm text-title-sm text-on-surface block leading-tight tracking-wider">MINIMAL</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Clean Geometric</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Field 2: Interior Brass Plaque Message -->
+<div class="space-y-1.5 pt-1">
+<div class="flex items-center justify-between">
+<label class="font-title-sm text-title-sm text-on-surface font-semibold flex items-center gap-1.5" for="plaqueInput">
+<span>Interior Brass Plaque Message</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium px-1.5 py-0.5 rounded bg-secondary-container">Complimentary</span>
+</label>
+</div>
+<textarea class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all resize-none" id="plaqueInput" maxlength="100" placeholder="Add a secret inside quote, wedding vow, or personal blessing..." rows="2">Forever my companion in every journey.</textarea>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">Laser-etched on a hand-cut brushed brass metal insert fixed inside the top lid.</span>
+</div>
+<!-- Field 3: Sketch / Monogram Upload -->
+<div class="space-y-2 pt-1">
+<label class="font-title-sm text-title-sm text-on-surface font-semibold flex items-center justify-between">
+<span>Custom Crest / Line Art (Optional)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Up to 5MB</span>
+</label>
+<div class="p-3 rounded-lg bg-surface-container flex items-center justify-between gap-2">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="material-symbols-outlined text-primary text-[24px]">description</span>
+<div class="min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate block">family_crest_vector.png</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">1.2 MB • Vector Outline</span>
+</div>
+</div>
+<button aria-label="Remove uploaded artwork" class="w-8 h-8 rounded-full bg-surface-container-high hover:bg-error-container text-on-surface-variant hover:text-on-error-container flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+<!-- Honest Live Digital Mockup -->
+<div class="pt-2">
+<div class="rounded-xl overflow-hidden bg-[#2D1B13] p-4 text-center shadow-inner relative">
+<div class="flex items-center justify-between text-[#E8D0C3] mb-3 font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+              Live Digital Visualizer
+            </span>
+<span class="opacity-80">Teak Wood Top Face</span>
+</div>
+<div class="py-6 px-4 bg-[#3E2519]/70 rounded-lg shadow-inner flex flex-col items-center justify-center min-h-[90px]">
+<div class="w-8 h-8 opacity-75 mb-2 text-[#E8C2A0] flex items-center justify-center" id="mockupArtwork">
+<span class="material-symbols-outlined text-[28px]">shield</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-[#F7D8BA] tracking-wide italic transition-all drop-shadow-sm" id="mockupText">
+              Eleanor &amp; Liam • 24.11.2024
+            </div>
+</div>
+<div class="mt-3 text-left bg-black/30 rounded-lg p-2.5 text-[#E0C6B8]">
+<div class="flex items-start gap-1.5 font-body-sm text-body-sm leading-tight">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed mt-0.5 flex-shrink-0">info</span>
+<span>
+<strong>Loharu Workshop Notice:</strong> Because natural teak grain possesses unique color channels, laser etching depth and tone will gracefully vary. A high-res photo proof will be messaged for your final sign-off before shipping.
+              </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Direct Gifting & Delivery Calculator -->
+<section class="px-gutter pb-4 space-y-3">
+<!-- Pincode Checker Card -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 font-title-sm text-title-sm text-on-surface font-semibold">
+<span class="material-symbols-outlined text-primary text-[20px]">local_shipping</span>
+<span>Delivery &amp; Artisan Dispatch</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Free Shipping</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="relative flex-1">
+<input class="w-full px-3.5 py-2 rounded-lg bg-surface-container text-on-surface font-body-md text-body-md outline-none focus:ring-2 focus:ring-primary font-medium" id="pincodeInput" placeholder="Enter Pincode" type="number" value="127201"/>
+<span class="absolute right-2.5 top-2.5 text-secondary material-symbols-outlined text-[18px]">check_circle</span>
+</div>
+<button class="px-4 py-2 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md font-semibold transition-all" type="button">
+          Check
+        </button>
+</div>
+<div class="p-2.5 rounded-lg bg-secondary-container/40 text-on-secondary-container flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">verified_user</span>
+<div class="font-body-sm text-body-sm">
+<strong>Loharu, Haryana:</strong> Delivers by <span class="underline decoration-secondary">Thursday, 28 Nov</span> via Bluedart Express.
+        </div>
+</div>
+</div>
+<!-- Direct Gifting Checkbox -->
+<div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm">
+<label class="flex items-start gap-3 cursor-pointer select-none">
+<input checked="" class="mt-1 w-4 h-4 rounded text-primary focus:ring-primary accent-primary" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold flex items-center gap-1.5">
+<span>Send directly as a gift parcel</span>
+<span class="material-symbols-outlined text-primary text-[18px]">card_giftcard</span>
+</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Invoice hidden, packed in unbranded kraft exterior, with your personalized note handwritten on our wax-sealed craft card.
+          </span>
+</div>
+</label>
+</div>
+</section>
+<!-- Accordion Heritage & Details Tabs -->
+<section class="px-gutter pb-4 space-y-2">
+<!-- Accordion Item 1 -->
+<details class="group rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden" open="">
+<summary class="flex items-center justify-between p-4 cursor-pointer list-none select-none text-on-surface">
+<span class="font-title-sm text-title-sm font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">carpenter</span>
+<span>Craftsmanship &amp; Material Heritage</span>
+</span>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-4 pb-4 pt-1 font-body-sm text-body-sm text-on-surface-variant space-y-2">
+<p>
+          Each keepsake box is created from aged Haryana Sheesham &amp; Teak timber, responsibly harvested and air-seasoned for 90 days to prevent warping. 
+        </p>
+<p>
+          The surface is smoothed with 400-grit sanders and sealed using organic mustard oil and beeswax polish, delivering a velvety satin touch that matures into a deep antique patina over generations.
+        </p>
+<div class="grid grid-cols-2 gap-2 pt-1 font-label-sm text-label-sm text-on-surface">
+<div class="p-2 rounded bg-surface-container flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">check</span>
+<span>Solid Brass Hinges</span>
+</div>
+<div class="p-2 rounded bg-surface-container flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">check</span>
+<span>Plush Velvet Inlay</span>
+</div>
+</div>
+</div>
+</details>
+<!-- Accordion Item 2 -->
+<details class="group rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden">
+<summary class="flex items-center justify-between p-4 cursor-pointer list-none select-none text-on-surface">
+<span class="font-title-sm text-title-sm font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">verified</span>
+<span>Proofing &amp; Cancellation Policy</span>
+</span>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-4 pb-4 pt-1 font-body-sm text-body-sm text-on-surface-variant space-y-2">
+<p>
+          Because every personalized piece is custom engraved, cancellations or text edits are unconditionally allowed until your WhatsApp proof is explicitly approved.
+        </p>
+<p>
+          Once laser production commences in Loharu, personalized returns cannot be accepted unless transit damage or craftsmanship defects occur.
+        </p>
+</div>
+</details>
+<!-- Accordion Item 3 -->
+<details class="group rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden">
+<summary class="flex items-center justify-between p-4 cursor-pointer list-none select-none text-on-surface">
+<span class="font-title-sm text-title-sm font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">store</span>
+<span>Meet the Loharu Workshop</span>
+</span>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-4 pb-4 pt-1 font-body-sm text-body-sm text-on-surface-variant space-y-2.5">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Portrait of an Indian master wood artisan in an apron carving heirloom timber inside an authentic sunlit Loharu workshop with traditional hand planes in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKEW7MQBwfvzzSAs2wwQ6gI78EAW9guDOn-trYEEpkxZIZruJQrz6rsyGTEnnhL8SZeUbnGoYVUsdtSJUkeUiD7mI8_WRjNp9RvYhP0UatgCR03bNohp3pM-bbxMvLDM1vEawbCpK8jcgxmlPOhxt2wI8EVMnXBclEP1aLkui6rn1z46vU7azF9VQnRla0lzJCjfNNfYdDb1xDtcvmD_I1hzlrOEowdQZm1TuRPCTys88gseXJ5O9Q"/>
+</div>
+<div>
+<div class="font-title-sm text-title-sm text-on-surface font-semibold">Master Craftsman Ramesh &amp; Studio</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">3rd-generation joiner in Loharu, Bhiwani District</div>
+</div>
+</div>
+<p class="italic text-on-surface">
+          "When you carve a child’s name or a sacred anniversary date into aged wood, it ceases to be merchandise. It becomes an heirloom that will outlive us all."
+        </p>
+</div>
+</details>
+</section>
+<!-- Sticky Bottom Action Bar -->
+<div class="fixed bottom-16 left-0 right-0 z-40 bg-surface/95 backdrop-blur-xl shadow-[0_-4px_16px_rgba(43,38,37,0.08)] px-gutter py-2.5">
+<div class="flex items-center gap-2.5 max-w-md mx-auto">
+<button aria-label="Save to Wishlist" class="w-12 h-12 rounded-xl bg-surface-container-lowest hover:bg-surface-container text-on-surface flex items-center justify-center shadow-sm flex-shrink-0 transition-transform active:scale-95" id="wishlistBtn" onclick="toggleWishlist(this)" type="button">
+<span class="material-symbols-outlined text-[24px]">favorite_border</span>
+</button>
+<button class="flex-1 h-12 rounded-xl bg-primary hover:bg-primary-container text-on-primary flex items-center justify-between px-4 shadow-md transition-all active:scale-[0.99]" onclick="handleAddToCart()" type="button">
+<div class="flex flex-col text-left leading-tight">
+<span class="font-title-sm text-title-sm font-bold">Personalize &amp; Add</span>
+<span class="font-label-sm text-label-sm opacity-90">3-Step Proofing Included</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-title-md text-title-md font-bold" id="ctaPrice">₹1,499</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</div>
+</button>
+</div>
+</div>
+</div>
+<script>
+  let currentBasePrice = 1499;
+
+  function updateMockupText(text) {
+    const mockup = document.getElementById('mockupText');
+    const counter = document.getElementById('charCounter');
+    const cleanText = text.trim();
+    
+    if (counter) {
+      counter.innerText = `${text.length} / 30`;
+    }
+    
+    if (mockup) {
+      mockup.innerText = cleanText.length > 0 ? cleanText : 'Your Custom Engraving Here';
+    }
+  }
+
+  function selectFont(style, btn) {
+    const mockup = document.getElementById('mockupText');
+    document.querySelectorAll('.font-btn').forEach(b => {
+      b.classList.remove('ring-2', 'ring-primary');
+    });
+    btn.classList.add('ring-2', 'ring-primary');
+
+    if (!mockup) return;
+    mockup.className = 'text-[#F7D8BA] tracking-wide transition-all drop-shadow-sm';
+    
+    if (style === 'script') {
+      mockup.classList.add('font-headline-sm', 'text-headline-sm', 'italic');
+    } else if (style === 'serif') {
+      mockup.classList.add('font-headline-sm', 'text-headline-sm', 'font-serif');
+    } else {
+      mockup.classList.add('font-title-md', 'text-title-md', 'uppercase', 'tracking-widest');
+    }
+  }
+
+  function selectFinish(finishName, btn) {
+    document.getElementById('finishLabel').innerText = finishName;
+    document.querySelectorAll('.finish-pill').forEach(b => {
+      b.classList.remove('ring-2', 'ring-primary');
+    });
+    btn.classList.add('ring-2', 'ring-primary');
+  }
+
+  function selectSize(sizeName, price, btn) {
+    currentBasePrice = price;
+    const formattedPrice = '₹' + price.toLocaleString('en-IN');
+    document.getElementById('sizeLabel').innerText = sizeName === 'Standard' ? 'Standard (8 × 6 in)' : 'Grand Heirloom (10 × 8 in)';
+    document.getElementById('priceDisplay').innerText = formattedPrice;
+    document.getElementById('ctaPrice').innerText = formattedPrice;
+    
+    document.querySelectorAll('.size-pill').forEach(b => {
+      b.classList.remove('ring-2', 'ring-primary');
+    });
+    btn.classList.add('ring-2', 'ring-primary');
+  }
+
+  function toggleWishlist(btn) {
+    const icon = btn.querySelector('.material-symbols-outlined');
+    if (icon.innerText === 'favorite_border') {
+      icon.innerText = 'favorite';
+      icon.classList.add('text-primary');
+      icon.style.fontVariationSettings = "'FILL' 1";
+    } else {
+      icon.innerText = 'favorite_border';
+      icon.classList.remove('text-primary');
+      icon.style.fontVariationSettings = "'FILL' 0";
+    }
+  }
+
+  function switchHeroImage(index) {
+    document.querySelectorAll('.thumb-btn').forEach((b, i) => {
+      if (i === index) {
+        b.classList.add('ring-2', 'ring-primary', 'opacity-100');
+        b.classList.remove('opacity-75');
+      } else {
+        b.classList.remove('ring-2', 'ring-primary');
+        b.classList.add('opacity-75');
+      }
+    });
+  }
+
+  function handleAddToCart() {
+    const textVal = document.getElementById('lidEngravingInput').value.trim();
+    if (!textVal) {
+      alert('Please enter your custom engraving text before adding to bag.');
+      document.getElementById('lidEngravingInput').focus();
+      return;
+    }
+    const btn = document.querySelector('button[onclick="handleAddToCart()"]');
+    const origHTML = btn.innerHTML;
+    btn.innerHTML = `<span class="font-title-sm text-title-sm font-bold flex items-center justify-center w-full gap-2"><span class="material-symbols-outlined text-[20px] animate-spin">progress_activity</span> Adding Bespoke Parcel...</span>`;
+    setTimeout(() => {
+      btn.innerHTML = `<span class="font-title-sm text-title-sm font-bold flex items-center justify-center w-full gap-2 text-secondary-container"><span class="material-symbols-outlined text-[20px]">done</span> Saved to Bag!</span>`;
+      setTimeout(() => {
+        btn.innerHTML = origHTML;
+      }, 2200);
+    }, 600);
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]" data-active-classes="text-primary font-semibold"><div class="flex items-center justify-around h-16 px-space-xs"><a class="flex flex-col items-center justify-center w-14 h-full gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="explore" href="#"><span class="material-symbols-outlined text-2xl">storefront</span><span class="font-label-sm text-label-sm text-center">Explore</span></a><a class="flex flex-col items-center justify-center w-14 h-full gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="categories" href="#"><span class="material-symbols-outlined text-2xl">grid_view</span><span class="font-label-sm text-label-sm text-center">Categories</span></a><a class="flex flex-col items-center justify-center w-16 h-full gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="custom-bespoke" href="#"><span class="material-symbols-outlined text-2xl">auto_awesome</span><span class="font-label-sm text-label-sm text-center">Bespoke</span></a><a class="flex flex-col items-center justify-center w-14 h-full gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="orders-and-gifts" href="#"><span class="material-symbols-outlined text-2xl">local_shipping</span><span class="font-label-sm text-label-sm text-center">Orders</span></a><a class="flex flex-col items-center justify-center w-14 h-full gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="profile-store" href="#"><span class="material-symbols-outlined text-2xl">account_circle</span><span class="font-label-sm text-label-sm text-center">Profile</span></a></div></nav></body></html>
